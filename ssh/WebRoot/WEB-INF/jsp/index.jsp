@@ -316,11 +316,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<dl>
 					<dt>新手指南</dt>
 							<dd>
-								<a  target="_blank">支付方式</a>
+								<a  href="Payanddistribution.html#center_top" target="_blank">支付方式</a>
 								|
 							</dd>
 							<dd>
-								<a  target="_blank">配送方式</a>
+								<a href="Payanddistribution.html#center_transport" target="_blank">配送方式</a>
 								|
 							</dd>
 							<dd>

@@ -1,0 +1,18 @@
+@charset "utf-8";
+
+/*
+ * Copyright 2005-2013 dhcc.com.cn. All rights reserved.
+ * Support: http://www.dhcc.com.cn
+ * License: http://www.dhcc.com.cn/license
+ * 
+ * Style - paydist.css
+ * Version: 3.0
+ */
+
+/* ---------- paydist ---------- */
+.pay{ width:950px;  margin:10px;}
+.pay_div{width:950px ;margin-left: 20px;margin-top: 5px}
+.center_tr{width:950px;}
+.transport{margin-left:auto;}
+.trans_div{width:950px ;margin-left: 20px;margin-top: 5px}
+.trans_div_detiled{width:950px ;margin-left: 20px;margin-top: 5px}
