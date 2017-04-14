@@ -328,11 +328,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								|
 							</dd>
 							<dd>
-								<a  target="_blank">购物帮助</a>
+								<a href="help.html#center_top" target="_blank">购物帮助</a>
 								|
 							</dd>
 							<dd>
-								<a  target="_blank">蔬菜卡</a>
+								<a href="help.html#ios" target="_blank">蔬菜卡</a>
 								|
 							</dd>
 							<dd>

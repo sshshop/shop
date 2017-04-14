@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+
+.*{
+	text-decoration:none;
+}
+
+.list{
+	float:left;
+	width:30%;
+	height:600px;
+}
+
+.list a:hover{
+	text-decoration:none;
+}
+.list a:visited{
+	text-decoration:none;
+}
+.list a:link{
+	text-decoration:none;
+}
+
+.nav_item{
+	margin:10px;
+
+}
+
+.nav_item_a{
+	border-radius:0px;
+}
+
+.list_item{
+	margin-bottom:5px;
+	width:180px;
+	border-radius:0px;
+	border-style:solid;
+	border-color:black;
+	border:1px;
+}
+#myTab{
+	border-style:none;
+}
+
+.tab{
+	background-color:#FFFACD;
+	float:left;
+	width:65%;
+	height:700px;
+	padding:20px;
+}
+.text_item{
+	font-size:18px;
+	color:#00CD00;
+}
