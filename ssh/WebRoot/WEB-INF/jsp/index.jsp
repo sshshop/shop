@@ -235,7 +235,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div class="span24">
 			<div class="friendLink">
 				<dl>
-					<dt>新手指南</dt>
+					<dd><a  href="./newguide.html" target="_blank">新手指南</a></dd>
 							<dd>
 								<a  href="Payanddistribution.html#center_top" target="_blank">支付方式</a>
 								|

@@ -1,0 +1,19 @@
+@charset "utf-8";
+
+
+*{margin: 0; padding: 0; list-style: none; text-decoration: none;}
+/*#container index{ width:800px; height:1000px;}*/
+#container index{ width:1000px; height:550px; }
+.d11{ width:331px; height:550px; margin-left:2.3px; float:left;}
+.d11 ul{ width:331px; height:500px; margin-top: 105px; margin-left: 80px;}
+/*position:relative;如果父元素设置了position:relative，那么子元素在定位的时候就是相对于父元素的左上角为原点进行定位的。如果父元素没有设置该属性，则子元素相对于body的左上角进行定位。*/
+.d11 ul li{width:329px; height:80px;  }
+/**/
+.d11 ul li a{ display:block; width:329px; height:10px; text-align:center; font-size:15px; line-height:2; }
+
+/*display:none;将二级列表隐藏起来*/
+ .d11 ul li ul{ display:none;}
+
+/*当鼠标放在li上面的时候，让二级列表出现，并且设置二级列表的定位*/
+.d11 ul li:hover ul{ display:block; position:absolute; left:450px; top:10px; z-index:1;}
+
