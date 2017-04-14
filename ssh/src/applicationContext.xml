@@ -58,6 +58,16 @@
 			
 	</bean>
 	
+	<!-- 用户模块action -->
+	
+	<bean id="userAction" class="cn.lyj.ssh.user.action.UserAction" scope="prototype">
+		
+		
+	</bean>
+	
+	
+	
+	
 	<!-- Service的配置  ===========================-->
 	
 	
