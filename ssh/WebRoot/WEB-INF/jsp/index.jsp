@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 	<%@ include file="menu.jsp" %>
 
-</div>	
+
 
 <div class="container index">
 		

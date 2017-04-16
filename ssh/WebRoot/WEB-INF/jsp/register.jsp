@@ -8,20 +8,88 @@
 <title>会员注册</title>
 <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
 <link href="${pageContext.request.contextPath}/css/register.css" rel="stylesheet" type="text/css"/>
+
+<script  >
+		
+		function checkForm(){
+		//检验用户名
+		//获得用户名文本框的值
+		
+		var username=document.getElementById("username").value;
+		if(username==null||username==""){
+			
+			alert("用户名不能为空！")
+			return false;	
+		}
+			
+		//检验密码
+		//获得密码文本框的值
+			
+		var password=document.getElementById("password").value;
+		if(password==null||password==""){
+		
+		alert("密码不能为空！")
+		return false;	
+		}
+		//检验确认密码
+		
+		
+		var repassword=document.getElementById("repassword").value;
+		if(password!=repassword ){
+		
+		alert("两次密码输入不一致！")
+		return false;
+		
+		}
+		
+		
+		//验证邮箱格式
+		var regex = /^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/g;
+		var email=document.getElementById("email").value;
+        if ( regex.test(email) )
+        {
+           return true;
+        }
+        else
+        {
+            alert( "您输入的电子邮件地址不合法" );
+            return false;
+        }
+		
+		
+		var name=document.getElementById("name").value;
+		if(name==null||name==""){
+			
+			alert("名字不能为空！")
+			return false;	
+		}
+		
+		
+		var addr=document.getElementById("addr").value;
+		if(addr==null||addr==""){
+			
+			alert("地址不能为空！")
+			return false;	
+		}
+		
+		
+	}
+		
+		
+			
+		
+		
+
+
+</script>
+
+
+
 </head>
+
+
 <body>
-<div class="container header">
-	<div class="span5">
-		<div class="logo">
-			<a href="http://localhost:8080/mango/">
-				<img src="${pageContext.request.contextPath}/image/r___________renleipic_01/logo.gif" alt="传智播客">
-			</a>
-		</div>
-	</div>
-	<div class="span9">
-<div class="headerAd">
-					<img src="${pageContext.request.contextPath}/image/header.jpg" width="320" height="50" alt="正品保障" title="正品保障">
-</div>	</div>
+
 	
 <%@ include file="menu.jsp" %>
 
@@ -32,7 +100,7 @@
 					<div class="title">
 						<strong>会员注册</strong>USER REGISTER
 					</div>
-					<form id="registerForm"  method="post" novalidate="novalidate">
+					<form id="registerForm"  method="post" novalidate="novalidate" onsubmit="return checkForm();">
 						<table>
 							<tbody><tr>
 								<th>
@@ -55,7 +123,7 @@
 									<span class="requiredField">*</span>确认密码:
 								</th>
 								<td>
-									<input type="password" name="rePassword" class="text" maxlength="20" autocomplete="off">
+									<input type=" password" id="repassword" name="repassword" class="text" maxlength="20" autocomplete="off">
 								</td>
 							</tr>
 							<tr>
@@ -71,7 +139,7 @@
 											姓名:
 										</th>
 										<td>
-												<input type="text" name="memberAttribute_1" class="text" maxlength="200">
+												<input type="text"  id="name" name="memberAttribute_1" class="text" maxlength="200">
 										</td>
 									</tr>
 									<tr>
@@ -94,7 +162,7 @@
 											出生日期:
 										</th>
 										<td>
-												<input type="text" name="memberAttribute_3" class="text" onfocus="WdatePicker();">
+												<input type="date" name="memberAttribute_3" class="text" onfocus="WdatePicker();">
 										</td>
 									</tr>
 									
@@ -103,7 +171,7 @@
 											地址:
 										</th>
 										<td>
-												<input type="text" name="memberAttribute_5" class="text" maxlength="200">
+												<input type="text"  id="addr" name="memberAttribute_5" class="text" maxlength="200">
 										</td>
 									</tr>
 								<tr>
