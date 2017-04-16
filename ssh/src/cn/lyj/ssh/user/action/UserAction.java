@@ -123,17 +123,19 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	public String active(){
 		User existUser = userService.findByCode(user.getCode());
 		//判断exitUser
-		if (existUser != null){
+		if (existUser == null){
+			//激活失败
+			this.addActionMessage("激活失败：激活码错误！");
+			return NONE;
+		}else{
+			
 			//激活成功
 			//修改用户的状态
 			existUser.setCode(null);
 			existUser.setState(1);
 			userService.update(existUser);
-		}else{
-			//激活失败
-			this.addActionMessage("激活失败：激活码错误！");
-			return "msg";
+			
+			return "active";
 		}
-		return NONE;
 	}
 }
