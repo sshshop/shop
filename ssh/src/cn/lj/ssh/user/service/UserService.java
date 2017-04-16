@@ -46,6 +46,6 @@ public class UserService {
 	 * @return
 	 */
 	public User login(User user) {
-		return null;
+		return userDao.login(user);
 	}
 }

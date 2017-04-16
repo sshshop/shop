@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-
 <div class="container header">
 	<div class="span5">
 		<div class="logo">
@@ -32,7 +31,9 @@
 			<li id="headerLogin" class="headerLogin" style="display: list-item;">
 				<a href="#">我的订单</a>
 			|</li>
-			
+			<li id="headerLogin" class="headerLogin" style="display: list-item;">
+				<a href="#">退出</a>
+			|</li>
 			</s:else>
 		
 			<li><a>会员中心</a> |</li>

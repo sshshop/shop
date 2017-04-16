@@ -61,17 +61,21 @@
 	<!-- 用户模块action -->
 	
 	<bean id="userAction" class="cn.lyj.ssh.user.action.UserAction" scope="prototype">
-		
-		
+		<!-- 注入service-->
+		<property name="userService" ref="userService"></property>
 	</bean>
 	
 	
 	
 	
 	<!-- Service的配置  ===========================-->
-	
+	<bean id="userService" class="cn.lj.ssh.user.service.UserService">
+			<property name="userDao" ref="userDao"></property>
+	</bean>
 	
 	
 	<!-- Dao的配置  ===========================-->
-	
+	<bean id="userDao" class="cn.lyj.ssh.user.dao.UserDao">
+	<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
 </beans>

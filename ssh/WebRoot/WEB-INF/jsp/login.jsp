@@ -1,33 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>欢迎登录</title>
-<link href="${pageContext.request.contextPath}/css/login.css" rel="stylesheet" type="text/css"/>
-<link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
+<link href="${pageContext.request.contextPath}/css/login.css"
+	rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath}/css/common.css"
+	rel="stylesheet" type="text/css" />
 </head>
 <body>
-	<%@ include file="menu.jsp" %>
+	<%@ include file="menu.jsp"%>
 	<div class="container login">
 		<div class="span12">
 			<div class="ad">
-				<img src="./image/login.jpg" width="500" height="330" alt="会员登录"
-					title="会员登录">
+				<img src="${pageContext.request.contextPath}/image/login.jpg"
+					width="500" height="330" alt="会员登录" title="会员登录">
 			</div>
 		</div>
 		<div class="span12 last">
 			<div class="wrap">
 				<div class="main">
 					<div class="title">
-						<strong>会员登录</strong>USER LOGIN
+						<strong>会员登录</strong>
 					</div>
-					<form id="loginForm" method="post" novalidate="novalidate">
+					<div class="title">
+						<strong><s:actionerror/> </strong>
+					</div>
+					<form id="loginForm" method="post" novalidate="novalidate"
+						action="${pageContext.request.contextPath}/user_login.action">
 						<table>
 							<tbody>
 								<tr>
-									<th>用户名/E-mail:</th>
+									<th>用户名:</th>
 									<td><input type="text" id="username" name="username"
 										class="text" maxlength="20"></td>
 								</tr>
@@ -42,7 +49,8 @@
 											id="captcha" name="captcha" class="text captcha"
 											maxlength="4" autocomplete="off"><img
 											id="captchaImage" class="captchaImage"
-											src="./image/captcha.jhtml" title="点击更换验证码">
+											src="${pageContext.request.contextPath}/image/captcha.jhtml"
+											title="点击更换验证码">
 									</span></td>
 								</tr>
 								<tr>
@@ -79,8 +87,8 @@
 	<div class="container footer">
 		<div class="span24">
 			<div class="footerAd">
-				<img src="./image/footer.jpg" width="950" height="52" alt="我们的优势"
-					title="我们的优势" />
+				<img src="${pageContext.request.contextPath}/image/footer.jpg"
+					width="950" height="52" alt="我们的优势" title="我们的优势" />
 			</div>
 		</div>
 		<div class="span24">
