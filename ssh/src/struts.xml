@@ -21,8 +21,11 @@
 		<!-- 配置用户模块的Action -->
 		<action name="user_*" class="userAction" method="{1}">
 			<result name="registPage">/WEB-INF/jsp/register.jsp</result>
-		
-		</action>
+			<!-- 跳转到登录页 -->
+			<result name="loginpage">/WEB-INF/jsp/login.jsp</result>	
+<!-- 			<result name="quit" type="redirectAction">index.action</result>
+ -->		</action>
+	
 		
 		
 		

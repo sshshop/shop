@@ -18,4 +18,21 @@ public class UserAction extends ActionSupport {
 		return "registPage";
 		
 	}
+	/**
+	 * 跳转到登录页面
+	 * @author 盖世太保
+	 * @return
+	 */
+	public String loginPage() {
+		return "loginpage";
+	}
+	
+	/**
+	 * 登录退出
+	 * @author 盖世太保
+	 * @return
+	 */
+	public String quit() {
+		return "quit";
+	}
 }
