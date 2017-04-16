@@ -17,14 +17,30 @@ import com.opensymphony.xwork2.ModelDriven;
  * @author 盖世太保
  *
  */
+@SuppressWarnings("serial")
 public class UserAction extends ActionSupport implements ModelDriven<User> {
 	//模型驱动使用的对象
 	private User user=new User();
+	
 	public User getModel() {
 		return user;
 	}
 	//注入UserService
 	private UserService userService;
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
+	public UserService getUserService() {
+		return userService;
+	}
+	public void setUserService(UserService userService) {
+		this.userService = userService;
+	}
+	
+	
 	/**
 	 * 跳转到注册页面的方法
 	 */
@@ -46,7 +62,10 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	 * @return
 	 */
 	public String login(){
-		User exitUser=new UserService().login(user);
+	/*异常解决：注意userservice是自动装包的，如果在新实例化一个的话，那userservice就是另一个userservice了，所以会出现空指针异常*/
+		/*User exitUser=new UserService.login(user);*/
+		
+		User exitUser=userService.login(user);
 		//判断用户
 		if (exitUser==null) {
 			//登录失败
@@ -61,12 +80,15 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 		}
 	}
 	
+
 	/**
 	 * 登录退出
 	 * @author 盖世太保
 	 * @return
 	 */
 	public String quit() {
+		//销毁session退出登录
+		ServletActionContext.getRequest().getSession().invalidate();
 		return "quit";
 	}
 	/**  AjAX进行异步校验
@@ -90,6 +112,27 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 		else{
 			//没有查询到该用户：用户可以使用
 			response.getWriter().println("<font color='green'>用户名可以使用</font> ");
+		}
+		return NONE;
+	}
+	/**
+	 *用户激活
+	 *@author Scream
+	 * */
+	
+	public String active(){
+		User existUser = userService.findByCode(user.getCode());
+		//判断exitUser
+		if (existUser != null){
+			//激活成功
+			//修改用户的状态
+			existUser.setCode(null);
+			existUser.setState(1);
+			userService.update(existUser);
+		}else{
+			//激活失败
+			this.addActionMessage("激活失败：激活码错误！");
+			return "msg";
 		}
 		return NONE;
 	}

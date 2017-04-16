@@ -27,17 +27,20 @@ public class UserService {
 	/**
 	 * 校验用户激活码
 	 * @param code：激活码
+	 * @author Scream
 	 * @return
 	 */
 	public User findByCode(String code) {
-		return null;
+		return userDao.findByCode(code);
 		
 	}
 	/**
 	 * 查询到用户激活码以后修改用户激活状态
 	 * @param existUser
+	 * @author Scream
 	 */
 	public void update(User existUser) {
+		userDao.update(existUser);
 		
 	}
 	/**
@@ -47,5 +50,8 @@ public class UserService {
 	 */
 	public User login(User user) {
 		return userDao.login(user);
+	}
+	public UserDao getUserDao() {
+		return userDao;
 	}
 }
