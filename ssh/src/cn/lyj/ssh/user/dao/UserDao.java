@@ -36,7 +36,20 @@ public class UserDao extends HibernateDaoSupport {
 		}
 		return null;
 	}
-	/*
+	
+	/**
+	 * 
+	 * 注册用户的数据保存
+	 * @author Scream
+	 * */
+	public void save(User user) {
+		// TODO Auto-generated method stub
+		this.getHibernateTemplate().save(user);
+		
+	}
+	
+	
+	/**
 	 * 根据激活码查询用户
 	 * @author Scream
 	 */
@@ -60,4 +73,5 @@ public class UserDao extends HibernateDaoSupport {
 			this.getHibernateTemplate().update(existUser);
 			
 		}
+		
 }

@@ -1,6 +1,8 @@
 package cn.lj.ssh.user.service;
 
 import cn.lj.ssh.user.vo.User;
+import cn.lj.ssh.utils.SendMailUnitl;
+import cn.lj.ssh.utils.UUIDUtils;
 import cn.lyj.ssh.user.dao.UserDao;
 
 public class UserService {
@@ -19,10 +21,15 @@ public class UserService {
 	}
 	/**
 	 * 保存用户信息，注册时可使用
+	 * @author Scream
 	 * @param user
 	 */
-	private void save(User user) {
-		
+	public void save(User user) {
+		user.setState(0); //0代表未激活，1代表已激活。
+		String code = UUIDUtils.getUUID();
+		user.setCode(code);
+		SendMailUnitl.senMail(user.getEmail(), code);
+		userDao.save(user);
 	}
 	/**
 	 * 校验用户激活码

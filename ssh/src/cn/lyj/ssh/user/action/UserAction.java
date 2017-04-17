@@ -8,6 +8,7 @@ import org.apache.struts2.ServletActionContext;
 
 import cn.lj.ssh.user.service.UserService;
 import cn.lj.ssh.user.vo.User;
+import cn.lj.ssh.utils.SendMailUnitl;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -80,7 +81,18 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 		}
 	}
 	
-
+	/**
+	 *用户注册 
+	 *@author Scream
+	 *
+	 **/
+	
+	public String register(){
+		userService.save(user);
+		this.addActionMessage("注册成功！请到邮箱激活");
+		return "msg";
+	}
+	
 	/**
 	 * 登录退出
 	 * @author 盖世太保

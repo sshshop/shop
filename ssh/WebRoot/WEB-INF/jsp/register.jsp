@@ -1,5 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
-		
+<%@ taglib uri="/struts-tags" prefix="s" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -100,7 +100,7 @@
 					<div class="title">
 						<strong>会员注册</strong>USER REGISTER
 					</div>
-					<form id="registerForm"  method="post" novalidate="novalidate" onsubmit="return checkForm();">
+					<form id="registerForm" action="${ pageContext.request.contextPath }/user_register.action"  method="post" novalidate="novalidate" onsubmit="return checkForm();">
 						<table>
 							<tbody><tr>
 								<th>
@@ -108,6 +108,7 @@
 								</th>
 								<td>
 									<input type="text" id="username" name="username" class="text" maxlength="20">
+									<span><s:fielderror fieldName="username" /></span>
 								</td>
 							</tr>
 							<tr>
@@ -116,6 +117,7 @@
 								</th>
 								<td>
 									<input type="password" id="password" name="password" class="text" maxlength="20" autocomplete="off">
+									<span><s:fielderror fieldName="password" /></span>
 								</td>
 							</tr>
 							<tr>
@@ -132,6 +134,7 @@
 								</th>
 								<td>
 									<input type="text" id="email" name="email" class="text" maxlength="200">
+									<span><s:fielderror fieldName="email" /></span>
 								</td>
 							</tr>
 									<tr>
@@ -140,23 +143,10 @@
 										</th>
 										<td>
 												<input type="text"  id="name" name="memberAttribute_1" class="text" maxlength="200">
+												<span><s:fielderror fieldName="name" /></span>
 										</td>
 									</tr>
-									<tr>
-										<th>
-											性别:
-										</th>
-										<td>
-												<span class="fieldSet">
-														<label>
-															<input type="radio" name="memberAttribute_2" value="male">男
-														</label>
-														<label>
-															<input type="radio" name="memberAttribute_2" value="female">女
-														</label>
-												</span>
-										</td>
-									</tr>
+									
 									<tr>
 										<th>
 											出生日期:
@@ -172,6 +162,7 @@
 										</th>
 										<td>
 												<input type="text"  id="addr" name="memberAttribute_5" class="text" maxlength="200">
+												<span><s:fielderror fieldName="addr" /></span>
 										</td>
 									</tr>
 								<tr>

@@ -62,8 +62,7 @@
 	<!-- Action的配置 =========================== -->
 
 	<!-- 首页访问的action -->
-	<bean id="indexAction" class="cn.lyj.ssh.index.action.IndexAction"
-		scope="prototype">
+	<bean id="indexAction" class="cn.lyj.ssh.index.action.IndexAction" scope="prototype">
 
 	</bean>
 
