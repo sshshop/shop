@@ -4,33 +4,30 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-
-    <constant name="struts.devMode" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.objectFactory.spring.autoWire.alwaysRespect"
+		value="true" />
 
 	<package name="ssh" extends="struts-default" namespace="/">
-		
-		
-		
-	
+
 		<!-- 配置首页访问的Action -->
-		
-		<action name="index" class="indexAction">
+
+		<action name="index" class="cn.lyj.ssh.index.action.IndexAction">
 			<result name="index">/WEB-INF/jsp/index.jsp</result>
 		</action>
-		
+
 		<!-- 配置用户模块的Action -->
-		<action name="user_*" class="userAction" method="{1}">
+		<action name="user_*" class="cn.lyj.ssh.user.action.UserAction" method="{1}">
 			<result name="registPage">/WEB-INF/jsp/register.jsp</result>
 			<!-- 跳转到登录页 -->
-			<result name="loginpage">/WEB-INF/jsp/login.jsp</result>	
-<!-- 			<result name="quit" type="redirectAction">index.action</result>
- -->		</action>
-	
-		
-		
-		
-		
+			<result name="loginpage">/WEB-INF/jsp/login.jsp</result>
+			<result name="loginSuccess" type="redirectAction">index</result>
+			<result name="login">/WEB-INF/jsp/login.jsp</result>
+			<result name="quit" type="redirectAction">index</result>
+			<result name="active">/WEB-INF/jsp/login.jsp</result>
+		</action>
+
 		<!-- 验证码Action -->
-		
+
 	</package>
 </struts>
