@@ -144,8 +144,7 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 			//修改用户的状态
 			existUser.setCode(null);
 			existUser.setState(1);
-			userService.update(existUser);
-			
+			userService.update(existUser);		
 			return "active";
 		}
 	}

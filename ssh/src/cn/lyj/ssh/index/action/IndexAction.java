@@ -1,7 +1,11 @@
 package cn.lyj.ssh.index.action;
 
-import cn.zy.ssh.category.service.CategoryService;
+import java.util.List;
 
+import cn.zy.ssh.category.service.CategoryService;
+import cn.zy.ssh.category.vo.Category;
+
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
@@ -23,7 +27,8 @@ public class IndexAction extends ActionSupport {
 	 * 执行首页的的方法
 	 */
 	public String  execute() {
-		categoryService.findAll();
+		List<Category> cList=categoryService.findAll();
+		ActionContext.getContext().getSession().put("cList", cList);
 		return "index";
 		
 	}

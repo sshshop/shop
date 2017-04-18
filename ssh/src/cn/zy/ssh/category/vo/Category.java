@@ -15,5 +15,9 @@ public class Category {
 	public void setCname(String cname) {
 		this.cname = cname;
 	}
-	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return cid+""+cname;
+	}
 }

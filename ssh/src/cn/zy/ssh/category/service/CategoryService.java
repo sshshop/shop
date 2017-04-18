@@ -30,7 +30,6 @@ public class CategoryService {
 	 */
 	public List<Category> findAll() {
 		//需要实现
-		
 		return categoryDao.findAll();
 
 	}

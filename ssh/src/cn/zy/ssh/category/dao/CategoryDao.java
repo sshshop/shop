@@ -13,6 +13,9 @@ public class CategoryDao extends HibernateDaoSupport{
 		// TODO Auto-generated method stub
 		String hql = "from Category";
 		List<Category> list = this.getHibernateTemplate().find(hql);
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i).toString());
+		}
 		return list;
 	}
 	

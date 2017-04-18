@@ -1,38 +1,38 @@
-
+ï»¿
 
 		function checkForm(){
-		//¼ìÑéÓÃ»§Ãû
-		//»ñµÃÓÃ»§ÃûÎÄ±¾¿òµÄÖµ
+		//æ£€éªŒç”¨æˆ·å
+		//è·å¾—ç”¨æˆ·åæ–‡æœ¬æ¡†çš„å€¼
 		
 		var username=document.getElementById("username").value;
 		if(username==null||username==""){
 			
-			alert("ÓÃ»§Ãû²»ÄÜÎª¿Õ£¡")
+			alert("ç”¨æˆ·åä¸èƒ½ä¸ºç©ºï¼")
 			return false;	
 		}
 			
-		//¼ìÑéÃÜÂë
-		//»ñµÃÃÜÂëÎÄ±¾¿òµÄÖµ
+		//æ£€éªŒå¯†ç 
+		//è·å¾—å¯†ç æ–‡æœ¬æ¡†çš„å€¼
 			
 		var password=document.getElementById("password").value;
 		if(password==null||password==""){
 		
-		alert("ÃÜÂë²»ÄÜÎª¿Õ£¡")
+		alert("å¯†ç ä¸èƒ½ä¸ºç©ºï¼")
 		return false;	
 		}
-		//¼ìÑéÈ·ÈÏÃÜÂë
+		//æ£€éªŒç¡®è®¤å¯†ç 
 		
 		
 		var repassword=document.getElementById("repassword").value;
 		if(password!=repassword ){
 		
-		alert("Á½´ÎÃÜÂëÊäÈë²»Ò»ÖÂ£¡")
+		alert("ä¸¤æ¬¡å¯†ç è¾“å…¥ä¸ä¸€è‡´ï¼")
 		return false;
 		
 		}
 		
 		
-		//ÑéÖ¤ÓÊÏä¸ñÊ½
+		//éªŒè¯é‚®ç®±æ ¼å¼
 		var regex = /^([0-9A-Za-z\-_\.]+)@([0-9a-z]+\.[a-z]{2,3}(\.[a-z]{2})?)$/g;
 		var email=document.getElementById("email").value;
         if ( regex.test(email) )
@@ -41,7 +41,7 @@
         }
         else
         {
-            alert( "ÄúÊäÈëµÄµç×ÓÓÊ¼şµØÖ·²»ºÏ·¨" );
+            alert( "æ‚¨è¾“å…¥çš„ç”µå­é‚®ä»¶åœ°å€ä¸åˆæ³•" );
             return false;
         }
 		
@@ -49,7 +49,7 @@
 		var name=document.getElementById("name").value;
 		if(name==null||name==""){
 			
-			alert("Ãû×Ö²»ÄÜÎª¿Õ£¡")
+			alert("åå­—ä¸èƒ½ä¸ºç©ºï¼")
 			return false;	
 		}
 		
@@ -57,7 +57,7 @@
 		var addr=document.getElementById("addr").value;
 		if(addr==null||addr==""){
 			
-			alert("µØÖ·²»ÄÜÎª¿Õ£¡")
+			alert("åœ°å€ä¸èƒ½ä¸ºç©ºï¼")
 			return false;	
 		}
 		
@@ -66,11 +66,11 @@
 		
 		
 		function checkUsername(){
-		// »ñµÃÎÄ¼ş¿òÖµ:
+		// è·å¾—æ–‡ä»¶æ¡†å€¼:
 		var username = document.getElementById("username").value;
-		// 1.´´½¨Òì²½½»»¥¶ÔÏó
+		// 1.åˆ›å»ºå¼‚æ­¥äº¤äº’å¯¹è±¡
 		var xhr = createXmlHttp();
-		// 2.ÉèÖÃ¼àÌı
+		// 2.è®¾ç½®ç›‘å¬
 		xhr.onreadystatechange = function(){
 			if(xhr.readyState == 4){
 				if(xhr.status == 200){
@@ -78,9 +78,9 @@
 				}
 			}
 		}
-		// 3.´ò¿ªÁ¬½Ó
+		// 3.æ‰“å¼€è¿æ¥
 		xhr.open("GET","${pageContext.request.contextPath}/user_findByName.action?time="+new Date().getTime()+"&username="+username,true);
-		// 4.·¢ËÍ
+		// 4.å‘é€
 		xhr.send(null);
 	}	
 		
