@@ -13,17 +13,16 @@ import cn.lj.ssh.user.vo.User;
  * 
  */
 public class UserDao extends HibernateDaoSupport {
-	// 按名字查询是否有该用户；
-	@SuppressWarnings("unchecked")
-	public User findByUsername(String username) {
-		String hql = "from User where username=?";
-		List<User> list = this.getHibernateTemplate().find(hql, username);
-
-		if (list != null && list.size() > 0) {
-			return list.get(0);
+	
+	// 按名次查询是否有该用户:
+		public User findByUsername(String username){
+			String hql = "from User where username = ?";
+			List<User> list = this.getHibernateTemplate().find(hql, username);
+			if(list != null && list.size() > 0){
+				return list.get(0);
+			}
+			return null;
 		}
-		return null;
-	}
 
 	@SuppressWarnings("unchecked")
 	public User login(User user) {
