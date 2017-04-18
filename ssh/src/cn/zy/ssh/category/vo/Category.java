@@ -1,5 +1,9 @@
 package cn.zy.ssh.category.vo;
-
+/**
+ * 一级分类vo实体类
+ * @author Rabit
+ *
+ */
 public class Category {
 	private Integer cid;
 	private String cname;
@@ -14,10 +18,5 @@ public class Category {
 	}
 	public void setCname(String cname) {
 		this.cname = cname;
-	}
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return cid+""+cname;
 	}
 }

@@ -1,8 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -15,14 +13,10 @@
 </head>
 <body>
 
-
 	<%@ include file="menu.jsp" %>
-
-
 
 <div class="container index">
 		
-
 		<div class="span24">
 			<div id="hotProduct" class="hotProduct clearfix">
 					<div class="title">
@@ -146,10 +140,7 @@
 								<a target="_blank"></a>
 							</li>
 					</ul>
-<!-- 					<div class="newProductAd">
-									<img src="${pageContext.request.contextPath}/image/q.jpg" width="260" height="343" alt="最新商品" title="最新商品">
-						</div>
-						 -->						
+					
 						 <ul class="tabContent" style="display: block;">
 									<li>
 										<a  target="_blank"><img src="${pageContext.request.contextPath}/image/l.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/4a51167a-89d5-4710-aca2-7c76edc355b8-thumbnail.jpg" style="display: block;"></a>									</li>

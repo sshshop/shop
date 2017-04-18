@@ -30,6 +30,5 @@ public class IndexAction extends ActionSupport {
 		List<Category> cList=categoryService.findAll();
 		ActionContext.getContext().getSession().put("cList", cList);
 		return "index";
-		
 	}
 }
