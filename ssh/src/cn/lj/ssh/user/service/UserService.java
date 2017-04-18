@@ -6,11 +6,20 @@ import cn.lj.ssh.utils.UUIDUtils;
 import cn.lyj.ssh.user.dao.UserDao;
 
 public class UserService {
-	private UserDao userDao;
+	// 注入UserDao
+		private UserDao userDao;
 
-	public void setUserDao(UserDao userDao) {
-		this.userDao = userDao;
-	}
+		public void setUserDao(UserDao userDao) {
+			this.userDao = userDao;
+		}
+		
+		
+		// 按用户名查询用户的方法:
+		public User findByUsername(String username){
+			return userDao.findByUsername(username);
+		}
+
+	
 	/**
 	 * 用户名查询用户是否存在
 	 * @param username

@@ -3,7 +3,7 @@
 	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
-	<package name="ssh" extends="struts-default" namespace="/">
+	<package name="user" extends="struts-default" namespace="/">
 	
 	<!-- 配置首页访问的Action -->
 		<action name="index" class="cn.lyj.ssh.index.action.IndexAction">

@@ -41,6 +41,7 @@
 		<property name="mappingResources">
 			<list>
 				<value>cn/lj/ssh/user/vo/User_hbm.xml</value>
+				<value>cn/zy/ssh/category/vo/Category_hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -51,19 +52,20 @@
 		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	
-	
-<aop:aspectj-autoproxy proxy-target-class="true" /> 
-	
-	
+
+
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+
+
 	<!-- 开启注解事务 -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
 
 	<!-- Action的配置 =========================== -->
 
 	<!-- 首页访问的action -->
-	<bean id="indexAction" class="cn.lyj.ssh.index.action.IndexAction" scope="prototype">
-
+	<bean id="indexAction" class="cn.lyj.ssh.index.action.IndexAction"
+		scope="prototype">
+		<property name="categoryService" ref="categoryService" />
 	</bean>
 
 	<!-- 用户模块action -->
@@ -74,15 +76,30 @@
 		<property name="userService" ref="userService" />
 	</bean>
 
+	<!--一级分类模块的bean<罗剑> -->
+	<!-- <bean id="categoryAction" class="cn.zy.ssh.category.vo.Category"
+		scope="prototype">
+		<property name="categoryService" ref="categoryService" />
+	</bean> -->
+
+
 
 	<!-- Dao的配置 =========================== -->
 	<bean id="userDao" class="cn.lyj.ssh.user.dao.UserDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!--一级分类模块的Dao<罗剑> -->
+	<bean id="categoryDao" class="cn.zy.ssh.category.dao.CategoryDao">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 
 	<!-- Service的配置 =========================== -->
 	<bean id="userService" class="cn.lj.ssh.user.service.UserService">
 		<property name="userDao" ref="userDao" />
+	</bean>
+	<!--一级分类模块的service<罗剑> -->
+	<bean id="categoryService" class="cn.zy.ssh.category.service.CategoryService">
+		<property name="categoryDao" ref="categoryDao" />
 	</bean>
 
 </beans>

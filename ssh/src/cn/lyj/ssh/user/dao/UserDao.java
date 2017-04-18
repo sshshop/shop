@@ -13,17 +13,16 @@ import cn.lj.ssh.user.vo.User;
  * 
  */
 public class UserDao extends HibernateDaoSupport {
-	// 按名字查询是否有该用户；
-	@SuppressWarnings("unchecked")
-	public User findByUsername(String username) {
-		String hql = "from User where username=?";
-		List<User> list = this.getHibernateTemplate().find(hql, username);
-
-		if (list != null && list.size() > 0) {
-			return list.get(0);
+	
+	// 按名次查询是否有该用户:
+		public User findByUsername(String username){
+			String hql = "from User where username = ?";
+			List<User> list = this.getHibernateTemplate().find(hql, username);
+			if(list != null && list.size() > 0){
+				return list.get(0);
+			}
+			return null;
 		}
-		return null;
-	}
 
 	@SuppressWarnings("unchecked")
 	public User login(User user) {
@@ -36,20 +35,7 @@ public class UserDao extends HibernateDaoSupport {
 		}
 		return null;
 	}
-	
-	/**
-	 * 
-	 * 注册用户的数据保存
-	 * @author Scream
-	 * */
-	public void save(User user) {
-		// TODO Auto-generated method stub
-		this.getHibernateTemplate().save(user);
-		
-	}
-	
-	
-	/**
+	/*
 	 * 根据激活码查询用户
 	 * @author Scream
 	 */
@@ -73,5 +59,11 @@ public class UserDao extends HibernateDaoSupport {
 			this.getHibernateTemplate().update(existUser);
 			
 		}
-		
+		/*
+		 * 更新用户状态
+		 * @author Scream
+		 */
+		public void save(User user) {
+			this.getHibernateTemplate().save(user);		
+		}
 }

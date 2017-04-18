@@ -103,27 +103,26 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 		ServletActionContext.getRequest().getSession().invalidate();
 		return "quit";
 	}
+	
+	
 	/**  AjAX进行异步校验
 	 * @author 盖世太保
 	 * @throws IOException 
 	 * 
 	 */
-	public String findByName() throws IOException{
-		
-	//调用service进行查询
-		User  existUser=userService.findByUserName(user.getUsername());
-		//获得response对象，向页面输出
-		HttpServletResponse response=ServletActionContext.getResponse();
+	public String findByName() throws IOException {
+		// 调用Service进行查询:
+		User existUser = userService.findByUsername(user.getUsername());
+		// 获得response对象,项页面输出:
+		HttpServletResponse response = ServletActionContext.getResponse();
 		response.setContentType("text/html;charset=UTF-8");
-	//判断
-		
-		if (existUser!=null) {
-			//查询到该用户：用户名已经存在
-			response.getWriter().println("<font color='red'>用户名已经存在</font> ");
-		}
-		else{
-			//没有查询到该用户：用户可以使用
-			response.getWriter().println("<font color='green'>用户名可以使用</font> ");
+		// 判断
+		if (existUser != null) {
+			// 查询到该用户:用户名已经存在
+			response.getWriter().println("<font color='red'>用户名已经存在</font>");
+		} else {
+			// 没查询到该用户:用户名可以使用
+			response.getWriter().println("<font color='green'>用户名可以使用</font>");
 		}
 		return NONE;
 	}

@@ -21,7 +21,7 @@
 			<li id="headerLogin" class="headerLogin" style="display: list-item;">
 				<a href="${ pageContext.request.contextPath }/user_loginPage.action">登录</a>|</li>
 			<li id="headerRegister" class="headerRegister"
-				style="display: list-item;"><a href="${pageContext.request.contextPath}/user_registPage.action">注册</a>|
+				style="display: list-item;"><a href="${pageContext.request.contextPath}/user_registPage.action">注册</a>
 			</li>
 			</s:if>
 			<s:else>
@@ -31,9 +31,7 @@
 			<li id="headerLogin" class="headerLogin" style="display: list-item;">
 				<a href="#">我的订单</a>
 			|</li>
-			<li id="headerLogin" class="headerLogin" style="display: list-item;">
-				<a href="${pageContext.request.contextPath}/user_quit.action">退出</a>
-			|</li>
+			
 			</s:else>
 		
 			<li><a>会员中心</a> |</li>
