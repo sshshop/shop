@@ -7,30 +7,5 @@
 	<constant name="struts.devMode" value="false" />
 	<constant name="struts.objectFactory.spring.autoWire.alwaysRespect"
 		value="true" />
-
-	<package name="ssh" extends="struts-default" namespace="/">
-
-		<!-- 配置首页访问的Action -->
-
-		<action name="index" class="cn.lyj.ssh.index.action.IndexAction">
-			<result name="index">/WEB-INF/jsp/index.jsp</result>
-		</action>
-
-		<!-- 配置用户模块的Action -->
-		<action name="user_*" class="cn.lyj.ssh.user.action.UserAction" method="{1}">
-			<!-- 跳转到注册页 -->
-			<result name="registPage">/WEB-INF/jsp/register.jsp</result>
-			<result name="input">/WEB-INF/jsp/register.jsp</result>
-			<result name="msg">/WEB-INF/jsp/msg.jsp</result>
-			<!-- 跳转到登录页 -->
-			<result name="loginpage">/WEB-INF/jsp/login.jsp</result>
-			<result name="loginSuccess" type="redirectAction">index</result>
-			<result name="login">/WEB-INF/jsp/login.jsp</result>
-			<result name="quit" type="redirectAction">index</result>
-			<result name="active">/WEB-INF/jsp/login.jsp</result>
-		</action>
-
-		<!-- 验证码Action -->
-
-	</package>
+	<include file="user.xml"></include>
 </struts>
