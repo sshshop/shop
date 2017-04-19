@@ -10,6 +10,7 @@
 	rel="stylesheet" type="text/css" />
 <link href="${pageContext.request.contextPath}/css/common.css"
 	rel="stylesheet" type="text/css" />
+<script src="<%=request.getContextPath() %>/js/register.js"  type="text/javascript" charset="utf-8"></script> 
 </head>
 <body>
 	<%@ include file="menu.jsp"%>
@@ -46,10 +47,10 @@
 								<tr>
 									<th>验证码:</th>
 									<td><span class="fieldSet"> <input type="text"
-											id="captcha" name="captcha" class="text captcha"
+											id="checkcode1" name="checkcode1" class="text captcha"
 											maxlength="4" autocomplete="off"><img
-											id="captchaImage" class="captchaImage"
-											src="${pageContext.request.contextPath}/image/captcha.jhtml"
+											id="checkimg" class="captchaImage" onclick="change()"
+											src="${pageContext.request.contextPath}/CheckImageAction.action"
 											title="点击更换验证码">
 									</span></td>
 								</tr>

@@ -42,6 +42,8 @@
 			<list>
 				<value>cn/lj/ssh/user/vo/User_hbm.xml</value>
 				<value>cn/zy/ssh/category/vo/Category_hbm.xml</value>
+				<value>cn/lj/ssh/product/vo/Product_hbm.xml</value>
+				<value>cn/zy/ssh/categorysecond/vo/CategorySecond_hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -62,10 +64,15 @@
 
 	<!-- Action的配置 =========================== -->
 
+	<!-- 验证码Aation配置 <罗剑> -->
+	<bean id="checkImageAction" class="cn.lyj.ssh.user.action.CheckImageAction"
+		scope="prototype"></bean>
+
 	<!-- 首页访问的action -->
 	<bean id="indexAction" class="cn.lyj.ssh.index.action.IndexAction"
 		scope="prototype">
 		<property name="categoryService" ref="categoryService" />
+		<property name="productService" ref="productService" />
 	</bean>
 
 	<!-- 用户模块action -->
@@ -77,10 +84,8 @@
 	</bean>
 
 	<!--一级分类模块的bean<罗剑> -->
-	<!-- <bean id="categoryAction" class="cn.zy.ssh.category.vo.Category"
-		scope="prototype">
-		<property name="categoryService" ref="categoryService" />
-	</bean> -->
+	<!-- <bean id="categoryAction" class="cn.zy.ssh.category.vo.Category" scope="prototype"> 
+		<property name="categoryService" ref="categoryService" /> </bean> -->
 
 
 
@@ -92,7 +97,13 @@
 	<bean id="categoryDao" class="cn.zy.ssh.category.dao.CategoryDao">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-
+	<!-- 商品dao<罗剑> -->
+	<bean id="productDao" class="cn.lj.ssh.product.dao.ProducetDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	
+	
 	<!-- Service的配置 =========================== -->
 	<bean id="userService" class="cn.lj.ssh.user.service.UserService">
 		<property name="userDao" ref="userDao" />
@@ -100,6 +111,10 @@
 	<!--一级分类模块的service<罗剑> -->
 	<bean id="categoryService" class="cn.zy.ssh.category.service.CategoryService">
 		<property name="categoryDao" ref="categoryDao" />
+	</bean>
+	<!-- 商品业务层service<罗剑> -->
+	<bean id="productService" class="cn.lj.ssh.product.vo.Product">
+		<property name="productDao" ref="productDao" />
 	</bean>
 
 </beans>

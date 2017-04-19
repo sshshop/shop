@@ -71,7 +71,7 @@
 		// 1.创建异步交互对象
 		var xhr = createXmlHttp();
 		// 2.设置监听
-		xhr.onreadystatechange = function(){
+		xhr.onreadystatechange = function() {
 			if(xhr.readyState == 4){
 				if(xhr.status == 200){
 					document.getElementById("span1").innerHTML = xhr.responseText;
@@ -104,5 +104,10 @@
 
 			return xmlHttp;
 		 }
+	//验证码校验工具	
+		function change() {
+			var img1=document.getElementById("checkimg");
+			img1.src="${pageContext.request.contextPath}/checkImageAction.action?"+new Date().getTime();
+		}
 		
 

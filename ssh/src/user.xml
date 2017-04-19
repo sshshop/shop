@@ -11,7 +11,7 @@
 		</action>
 		<!-- 验证码Action -->
 	
-<!-- 配置用户模块的Action -->
+	<!-- 配置用户模块的Action -->
 		<action name="user_*" class="cn.lyj.ssh.user.action.UserAction" method="{1}">
 			<result name="registPage">/WEB-INF/jsp/register.jsp</result>
 			<!-- 跳转到登录页 -->
@@ -20,6 +20,13 @@
 			<result name="login">/WEB-INF/jsp/login.jsp</result>
 			<result name="quit" type="redirectAction">index</result>
 			<result name="active">/WEB-INF/jsp/login.jsp</result>
+			<!-- 注册验证码验证失败，返回到注册页 -->
+			<result name="checkcodeFail">/WEB-INF/jsp/register.jsp</result>
+			<!-- 登录验证码验证失败，返回到注册页 -->
+			<result name="checkcodelogin">/WEB-INF/jsp/login.jsp</result>
 		</action>
+	<!-- 验证码的Action -->
+	<action name="checkImageAction" class="cn.lyj.ssh.user.action.CheckImageAction">
+	</action>
 	</package>
 </struts>

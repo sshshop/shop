@@ -13,7 +13,6 @@
 <script src="<%=request.getContextPath() %>/js/register.js"  type="text/javascript" charset="utf-8"></script> 
 
 
-
 </head>
 
 
@@ -22,14 +21,15 @@
 	
 <%@ include file="menu.jsp" %>
 
-</div>	<div class="container register">
+	<div class="container register">
 		<div class="span24">
 			<div class="wrap">
 				<div class="main clearfix">
 					<div class="title">
-						<strong>会员注册</strong>USER REGISTER
+						<strong>会员注册</strong>
 					</div>
-					<form id="registerForm" action="${ pageContext.request.contextPath }/user_register.action"  method="post" novalidate="novalidate" onsubmit="return checkForm();">
+					<dir><s:actionerror /> </dir>
+					<form id="registerForm" action="${pageContext.request.contextPath }/user_register.action"  method="post" novalidate="novalidate" onsubmit="return checkForm();">
 						<table>
 							<tbody><tr>
 								<th>
@@ -37,7 +37,7 @@
 								</th>
 								<td>
 									<span><s:fielderror fieldName="username" /></span>
-									<input type="text" id="username" name="username" class="text" maxlength="20" onblur="return checkUsername();">
+									<input type="text" id="username" name="username" class="text" maxlength="20" onblur="return checkUsername();" />
 									<span id="span1"></span>
 
 								</td>
@@ -47,7 +47,7 @@
 									<span class="requiredField">*</span>密&nbsp;&nbsp;码:
 								</th>
 								<td>
-									<input type="password" id="password" name="password" class="text" maxlength="20" autocomplete="off">
+									<input type="password" id="password" name="password" class="text" maxlength="20" autocomplete="off" />
 									<span><s:fielderror fieldName="password" /></span>
 								</td>
 							</tr>
@@ -56,7 +56,7 @@
 									<span class="requiredField">*</span>确认密码:
 								</th>
 								<td>
-									<input type=" password" id="repassword" name="repassword" class="text" maxlength="20" autocomplete="off">
+									<input type="password" id="repassword" name="repassword" class="text" maxlength="20" autocomplete="off"/>
 								</td>
 							</tr>
 							<tr>
@@ -64,7 +64,7 @@
 									<span class="requiredField">*</span>E-mail:
 								</th>
 								<td>
-									<input type="text" id="email" name="email" class="text" maxlength="200">
+									<input type="text" id="email" name="email" class="text" maxlength="200" />
 									<span><s:fielderror fieldName="email" /></span>
 								</td>
 							</tr>
@@ -73,7 +73,7 @@
 											姓名:
 										</th>
 										<td>
-												<input type="text"  id="name" name="memberAttribute_1" class="text" maxlength="200">
+												<input type="text"  id="name" name="memberAttribute_1" class="text" maxlength="200" />
 												<span><s:fielderror fieldName="name" /></span>
 										</td>
 									</tr>
@@ -83,7 +83,7 @@
 											出生日期:
 										</th>
 										<td>
-												<input type="date" name="memberAttribute_3" class="text" onfocus="WdatePicker();">
+												<input type="date" name="memberAttribute_3" class="text" onfocus="WdatePicker();" />
 										</td>
 									</tr>
 									
@@ -92,7 +92,7 @@
 											地址:
 										</th>
 										<td>
-												<input type="text"  id="addr" name="memberAttribute_5" class="text" maxlength="200">
+												<input type="text"  id="addr" name="memberAttribute_5" class="text" maxlength="200" />
 												<span><s:fielderror fieldName="addr" /></span>
 										</td>
 									</tr>
@@ -102,7 +102,7 @@
 									</th>
 									<td>
 										<span class="fieldSet">
-											<input type="text" id="captcha" name="captcha" class="text captcha" maxlength="4" autocomplete="off"><img id="captchaImage" class="captchaImage" src="${pageContext.request.contextPath}/image/captcha.jhtml" title="点击更换验证码">
+											<input type="text" id="checkcode" name="checkcode" class="text captcha" maxlength="4" autocomplete="off" /><img id="checkimg" class="captchaImage" src="${pageContext.request.contextPath}/checkImageAction.action" onclick="change()" title="点击更换验证码" />
 										</span>
 									</td>
 								</tr>
@@ -111,7 +111,7 @@
 									
 								</th>
 								<td>
-									<input type="submit" class="submit" value="同意以下协议并注册">
+									<input type="submit" class="submit" value="同意以下协议并注册" />
 								</td>
 							</tr>
 							<tr>
