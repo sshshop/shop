@@ -99,13 +99,13 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 		 */
 		/* User exitUser=new UserService.login(user); */
 		//验证码验证
-		String chcek1 = (String) ServletActionContext.getRequest().getAttribute(
+		/*String chcek1 = (String) ServletActionContext.getRequest().getAttribute(
 				"checkcode1");
-		System.out.println((chcek1)+"11111"+(checkcode));
-			if (!chcek1.equalsIgnoreCase(checkcode)) {
+		System.out.println((chcek1)+"11111"+(checkcode));*/
+		/*	if (!chcek1.equalsIgnoreCase(checkcode)) {
 				this.addActionError("验证输入错误");
 				return "checkcodelogin";
-			}
+			}*/
 		User exitUser = userService.login(user);
 		// 判断用户
 		if (exitUser == null) {

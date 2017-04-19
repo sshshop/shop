@@ -44,7 +44,7 @@
 									<td><input type="password" id="password" name="password"
 										class="text" maxlength="20" autocomplete="off"></td>
 								</tr>
-								<tr>
+								 <tr>
 									<th>验证码:</th>
 									<td><span class="fieldSet"> <input type="text"
 											id="checkcode1" name="checkcode1" class="text captcha"
@@ -53,7 +53,7 @@
 											src="${pageContext.request.contextPath}/CheckImageAction.action"
 											title="点击更换验证码">
 									</span></td>
-								</tr>
+								</tr> 
 								<tr>
 									<th>&nbsp;</th>
 									<td><label> <input type="checkbox"
