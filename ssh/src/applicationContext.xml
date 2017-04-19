@@ -44,6 +44,7 @@
 				<value>cn/zy/ssh/category/vo/Category_hbm.xml</value>
 				<value>cn/lj/ssh/product/vo/Product_hbm.xml</value>
 				<!-- <value>cn/zy/ssh/categorysecond/vo/CategorySecond_hbm.xml</value> -->
+				<value>cn/jidy/ssh/adminuser/vo/AdminUser_hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -72,7 +73,7 @@
 	<bean id="indexAction" class="cn.lyj.ssh.index.action.IndexAction"
 		scope="prototype">
 		<property name="categoryService" ref="categoryService" />
-		<property name="productService" ref="productService" />
+		<!-- <property name="productService" ref="productService" /> -->
 	</bean>
 
 	<!-- 用户模块action -->
@@ -116,5 +117,29 @@
 	<bean id="productService" class="cn.lj.ssh.product.service.ProductService">
 		<property name="productDao" ref="productDao" />
 	</bean>
+	
+	
+<!-- ===================================后台管理配置处====================================================== -->
+    <!-- action=====================-->
+    <!-- 登陆 -->
+    <bean id="adminUserAction" class="cn.jidy.ssh.adminuser.action.AdminUserAction" scope="prototype">
+    	<property name="adminUserService" ref="adminUserService"></property>
+    </bean>
+    
+    
+    
+     <!-- Service的配置 ====================== -->
+    <!-- 登陆 -->
+    <bean id="adminUserService" class="cn.jidy.ssh.adminuser.service.AdminUserService">
+    	<property name="adminUserDao" ref="adminUserDao"></property>
+    </bean>
+    
+    
+    
+    <!-- Dao的配置===================== -->
+    <!-- 登陆 -->
+    <bean id="adminUserDao" class="cn.jidy.ssh.adminuser.dao.AdminUserDao">
+    	<property name="sessionFactory" ref="sessionFactory" />
+    </bean>
 
 </beans>

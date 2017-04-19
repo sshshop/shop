@@ -11,5 +11,7 @@
 	<include file="user.xml"></include>
 	<!-- 分离一级商品分类模块 -->
 	<include file="category.xml"></include>
+	<!-- 后台管理员登录模块<蒋德义> -->
+	<include file="adminuser.xml"></include>
 	
 </struts>

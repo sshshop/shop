@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
+
 import cn.lj.ssh.product.dao.ProductDao;
 import cn.lj.ssh.product.vo.Product;
 @Transactional
@@ -15,7 +16,7 @@ public class ProductService {
 	}
 
 	public void setProductDao(ProductDao producetDao) {
-		this.productDao = producetDao;
+		this.productDao = productDao;
 	}
 	/**
 	 * 查询热门商品
