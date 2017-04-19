@@ -43,7 +43,7 @@
 				<value>cn/lj/ssh/user/vo/User_hbm.xml</value>
 				<value>cn/zy/ssh/category/vo/Category_hbm.xml</value>
 				<value>cn/lj/ssh/product/vo/Product_hbm.xml</value>
-				<value>cn/zy/ssh/categorysecond/vo/CategorySecond_hbm.xml</value>
+				<!-- <value>cn/zy/ssh/categorysecond/vo/CategorySecond_hbm.xml</value> -->
 			</list>
 		</property>
 	</bean>
@@ -98,7 +98,7 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	<!-- 商品dao<罗剑> -->
-	<bean id="productDao" class="cn.lj.ssh.product.dao.ProducetDao">
+	<bean id="productDao" class="cn.lj.ssh.product.dao.ProductDao">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
@@ -113,7 +113,7 @@
 		<property name="categoryDao" ref="categoryDao" />
 	</bean>
 	<!-- 商品业务层service<罗剑> -->
-	<bean id="productService" class="cn.lj.ssh.product.vo.Product">
+	<bean id="productService" class="cn.lj.ssh.product.service.ProductService">
 		<property name="productDao" ref="productDao" />
 	</bean>
 

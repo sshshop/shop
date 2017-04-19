@@ -4,18 +4,18 @@ import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import cn.lj.ssh.product.dao.ProducetDao;
+import cn.lj.ssh.product.dao.ProductDao;
 import cn.lj.ssh.product.vo.Product;
 @Transactional
 public class ProductService {
-	private ProducetDao producetDao;
+	private ProductDao productDao;
 
-	public ProducetDao getProducetDao() {
-		return producetDao;
+	public ProductDao getProductDao() {
+		return productDao;
 	}
 
-	public void setProducetDao(ProducetDao producetDao) {
-		this.producetDao = producetDao;
+	public void setProductDao(ProductDao producetDao) {
+		this.productDao = producetDao;
 	}
 	/**
 	 * 查询热门商品
