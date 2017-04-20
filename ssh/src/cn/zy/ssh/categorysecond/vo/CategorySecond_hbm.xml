@@ -8,6 +8,10 @@
 			<generator class="native" />
 		</id>
 		<property name="csname" />
-		<many-to-one name="category" class="cn.zy.ssh.category.vo.Category" column="cid"></many-to-one>
+		<many-to-one name="category" lazy="false" class="cn.zy.ssh.category.vo.Category" column="cid" />
+		<set name="products">
+			<key column="csid" />
+			<one-to-many class="cn.lj.ssh.product.vo.Product"/>
+		</set>
 	</class>
  </hibernate-mapping>

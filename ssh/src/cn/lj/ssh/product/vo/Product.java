@@ -2,6 +2,8 @@ package cn.lj.ssh.product.vo;
 
 import java.util.Date;
 
+import cn.zy.ssh.categorysecond.vo.CategorySecond;
+
 public class Product {
 	private Integer pid;
 	private String pname;
@@ -12,6 +14,13 @@ public class Product {
 	private Integer is_hot;
 	private Date pdate;
 	//二级分类的对象，外键
+	private CategorySecond categorySecond;
+	public CategorySecond getCategorySecond() {
+		return categorySecond;
+	}
+	public void setCategorySecond(CategorySecond categorySecond) {
+		this.categorySecond = categorySecond;
+	}
 	public Integer getPid() {
 		return pid;
 	}

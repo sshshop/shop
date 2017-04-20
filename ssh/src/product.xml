@@ -7,6 +7,7 @@
 		<action name="product_*" class="cn.lj.ssh.product.action.ProductAction" method="{1}">
 			<result name="findByPid">/WEB-INF/jsp/product.jsp</result>
 			<result name="findbycid">/WEB-INF/jsp/productList.jsp</result>
+			<result name="findbycsid">/WEB-INF/jsp/productList.jsp</result>
 		</action>
 	</package>
 
