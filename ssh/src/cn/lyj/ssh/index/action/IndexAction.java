@@ -41,6 +41,8 @@ public class IndexAction extends ActionSupport {
 		ActionContext.getContext().getSession().put("cList", cList);
 		List<Product> hList=productService.findHot();
 		List<Product> nList=productService.findNew();
+		ActionContext.getContext().getValueStack().set("hList",hList);
+		ActionContext.getContext().getValueStack().set("nList", nList);
 		return "index";
 	}
 }

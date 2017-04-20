@@ -5,6 +5,9 @@ import java.util.List;
 import org.springframework.transaction.annotation.Transactional;
 
 
+
+
+
 import cn.lj.ssh.product.dao.ProductDao;
 import cn.lj.ssh.product.vo.Product;
 @Transactional
@@ -15,7 +18,7 @@ public class ProductService {
 		return productDao;
 	}
 
-	public void setProductDao(ProductDao producetDao) {
+	public void setProductDao(ProductDao productDao) {
 		this.productDao = productDao;
 	}
 	/**
@@ -24,8 +27,8 @@ public class ProductService {
 	 * @return：返回list集合
 	 */
 	public List<Product> findHot() {
-	
-		return null;
+		
+		return productDao.findHot();
 	}
 	/**
 	 * 查询最新商品
@@ -33,7 +36,13 @@ public class ProductService {
 	 * @return：返回list集合
 	 */
 	public List<Product> findNew() {
-		return null;
+		return productDao.findNew();
 	}
+
+	public Product findByPid(Integer integer) {
+		return productDao.findByPid(integer);
+	}
+	
+	
 	
 }

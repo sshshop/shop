@@ -87,8 +87,10 @@
 	<!--一级分类模块的bean<罗剑> -->
 	<!-- <bean id="categoryAction" class="cn.zy.ssh.category.vo.Category" scope="prototype"> 
 		<property name="categoryService" ref="categoryService" /> </bean> -->
-
-
+	<bean id="productAction" class="cn.lj.ssh.product.action.ProductAction">
+		<property name="productService" ref="productService" />
+	</bean>
+	
 
 	<!-- Dao的配置 =========================== -->
 	<bean id="userDao" class="cn.lyj.ssh.user.dao.UserDao">

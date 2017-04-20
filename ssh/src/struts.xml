@@ -7,11 +7,13 @@
 	<constant name="struts.devMode" value="false" />
 	<constant name="struts.objectFactory.spring.autoWire.alwaysRespect"
 		value="true" />
-		<!-- 分离用户模块的xml配置文件 -->
+	<!-- 分离用户模块的xml配置文件 -->
 	<include file="user.xml"></include>
 	<!-- 分离一级商品分类模块 -->
 	<include file="category.xml"></include>
 	<!-- 后台管理员登录模块<蒋德义> -->
 	<include file="adminuser.xml"></include>
-	
+	<!-- 商品相关管理页面 <罗剑> -->
+	<include file="product.xml"></include>
+
 </struts>
