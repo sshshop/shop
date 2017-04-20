@@ -3,12 +3,16 @@
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-<!-- category的映射文件 -->
+	<!-- category的映射文件 -->
 	<class name="cn.zy.ssh.category.vo.Category" table="category">
 		<id name="cid">
 			<generator class="native" />
 		</id>
 		<property name="cname" />
+		<set name="categorySeconds" lazy="false" order-by="csid">
+			<key column="cid" />
+			<one-to-many class="cn.zy.ssh.categorysecond.vo.CategorySecond" />
+		</set>
 	</class>
 
 </hibernate-mapping>

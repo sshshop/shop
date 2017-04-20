@@ -43,7 +43,7 @@
 				<value>cn/lj/ssh/user/vo/User_hbm.xml</value>
 				<value>cn/zy/ssh/category/vo/Category_hbm.xml</value>
 				<value>cn/lj/ssh/product/vo/Product_hbm.xml</value>
-				<!-- <value>cn/zy/ssh/categorysecond/vo/CategorySecond_hbm.xml</value> -->
+				<value>cn/zy/ssh/categorysecond/vo/CategorySecond_hbm.xml</value>
 				<value>cn/jidy/ssh/adminuser/vo/AdminUser_hbm.xml</value>
 			</list>
 		</property>
@@ -89,8 +89,9 @@
 		<property name="categoryService" ref="categoryService" /> </bean> -->
 	<bean id="productAction" class="cn.lj.ssh.product.action.ProductAction">
 		<property name="productService" ref="productService" />
+		<property name="categoryService" ref="categoryService" />
 	</bean>
-	
+
 
 	<!-- Dao的配置 =========================== -->
 	<bean id="userDao" class="cn.lyj.ssh.user.dao.UserDao">
@@ -104,9 +105,13 @@
 	<bean id="productDao" class="cn.lj.ssh.product.dao.ProductDao">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	
-	
-	
+	<!-- 二级分类的文件《罗剑》 -->
+	<!-- <bean id="categorySecondDao" class="cn.zy.ssh.categorysecond.dao.CategorySecondDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean> -->
+
+
+
 	<!-- Service的配置 =========================== -->
 	<bean id="userService" class="cn.lj.ssh.user.service.UserService">
 		<property name="userDao" ref="userDao" />
@@ -119,29 +124,30 @@
 	<bean id="productService" class="cn.lj.ssh.product.service.ProductService">
 		<property name="productDao" ref="productDao" />
 	</bean>
-	
-	
-<!-- ===================================后台管理配置处====================================================== -->
-    <!-- action=====================-->
-    <!-- 登陆 -->
-    <bean id="adminUserAction" class="cn.jidy.ssh.adminuser.action.AdminUserAction" scope="prototype">
-    	<property name="adminUserService" ref="adminUserService"></property>
-    </bean>
-    
-    
-    
-     <!-- Service的配置 ====================== -->
-    <!-- 登陆 -->
-    <bean id="adminUserService" class="cn.jidy.ssh.adminuser.service.AdminUserService">
-    	<property name="adminUserDao" ref="adminUserDao"></property>
-    </bean>
-    
-    
-    
-    <!-- Dao的配置===================== -->
-    <!-- 登陆 -->
-    <bean id="adminUserDao" class="cn.jidy.ssh.adminuser.dao.AdminUserDao">
-    	<property name="sessionFactory" ref="sessionFactory" />
-    </bean>
+
+
+	<!-- ===================================后台管理配置处====================================================== -->
+	<!-- action===================== -->
+	<!-- 登陆 -->
+	<bean id="adminUserAction" class="cn.jidy.ssh.adminuser.action.AdminUserAction"
+		scope="prototype">
+		<property name="adminUserService" ref="adminUserService"></property>
+	</bean>
+
+
+
+	<!-- Service的配置 ====================== -->
+	<!-- 登陆 -->
+	<bean id="adminUserService" class="cn.jidy.ssh.adminuser.service.AdminUserService">
+		<property name="adminUserDao" ref="adminUserDao"></property>
+	</bean>
+
+
+
+	<!-- Dao的配置===================== -->
+	<!-- 登陆 -->
+	<bean id="adminUserDao" class="cn.jidy.ssh.adminuser.dao.AdminUserDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
 
 </beans>

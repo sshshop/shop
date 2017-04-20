@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 
 
+
 import cn.lj.ssh.product.dao.ProductDao;
 import cn.lj.ssh.product.vo.Product;
 @Transactional
@@ -42,6 +43,7 @@ public class ProductService {
 	public Product findByPid(Integer integer) {
 		return productDao.findByPid(integer);
 	}
+
 	
 	
 	

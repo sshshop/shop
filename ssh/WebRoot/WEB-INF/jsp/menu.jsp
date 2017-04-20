@@ -60,7 +60,7 @@
 			<li><a href="${pageContext.request.contextPath}/index.action">首页</a>
 				|</li>
 			<s:iterator var="c" value="#session.cList">
-				<li><a href="./蔬菜分类.htm"><s:property value="#c.cname"/></a> |</li>
+				<li><a href="${pageContext.request.contextPath}/product_findByCid.action?cid=<s:property value="#c.id"/>"><s:property value="#c.cname"/></a> |</li>
 			</s:iterator>
 		</ul>
 	</div>
