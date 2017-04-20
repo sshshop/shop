@@ -32,4 +32,38 @@ public class ProductDao extends HibernateDaoSupport {
 		return this.getHibernateTemplate().get(Product.class, integer);
 	}
 
+
+	/**
+	 * 
+	 * @author 盖世太保
+	 */
+	//DAO层统计商品个数的方法
+	public int findCount() {
+		String hql="select count(*) from Product";
+		List<Long> list=this.getHibernateTemplate().find(hql);
+		if(list!=null&&list.size()>0){
+			return list.get(0).intValue();
+		}
+		return 0;
+	}
+	//带分页查询商品的方法
+	public List<Product> findByPage(int begin, int limit) {
+		String hql="from Product order by pdate desc";
+		List<Product> list=this.getHibernateTemplate().execute(null);
+		if(list!=null&&list.size()>0){
+			return null;
+		}
+		return null;
+	}
+
+	public int findCountCsid(Integer csid) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public List<Product> findByPageCsid(Integer csid, int begin, int limit) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+ 
 }
