@@ -3,6 +3,7 @@ package cn.lj.ssh.product.service;
 import java.util.List;
 
 import org.springframework.transaction.annotation.Transactional;
+
 import cn.lj.ssh.product.dao.ProductDao;
 import cn.lj.ssh.product.vo.Product;
 import cn.lj.ssh.utils.PageBean;
@@ -110,5 +111,39 @@ public class ProductService {
 		return pageBean;
 	}
 	
+
+	/**
+	 *  
+	 * @author 盖世太保
+	 *
+	 */
+	
+	//业务查询商品带分页的方法
+		public PageBean<Product> findByPage(Integer page) {
+			PageBean<Product> pageBean=new PageBean<Product>();
+			//设置当前页数；
+			pageBean.setPage(page);
+			//设置每页显示记录数;
+			int limit =10;
+			pageBean.setLimit(limit);
+			//设置总记录数；
+			int totalCount=productDao.findCount();
+			pageBean.setTotalCount(totalCount);
+			//设置总页数
+			int totalPage=0;
+			if(totalCount%limit==0){
+				totalPage=totalCount/limit;
+				
+			}else{
+				totalPage=totalCount/limit+1;
+			}
+			pageBean.setTotalPage(totalPage);
+			//设置显示到页面的数据集合；
+			int begin=(page-1)*limit;
+			List<Product> list=productDao.findByPage(begin,limit);
+			pageBean.setList(list);
+			return pageBean;
+		}
+		
 	
 }

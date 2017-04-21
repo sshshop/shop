@@ -5,7 +5,11 @@ import java.util.HashSet;
 import java.util.Set;
 
 import cn.lj.ssh.user.vo.User;
-
+/**
+ * 映射类订单实体
+ * @author Rabit修改
+ *
+ */
 
 
 public class Order {

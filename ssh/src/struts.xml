@@ -19,5 +19,8 @@
 	<include file="adminorder.xml"/>
 	<!-- 商品相关管理页面 <罗剑> -->
 	<include file="product.xml"></include>
-	
+	<!-- 商品订单的相关配置  <罗剑>-->
+	<include file="order.xml"></include>
+	<!--  二级分类管理的配置 <张辉娟> -->
+	<include file="admincategorysecond.xml"></include>
 </struts>

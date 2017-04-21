@@ -10,5 +10,13 @@
 			  	<result name="loginFail">/admin/index.jsp</result>
 			 	<result name="loginSuccess" >/admin/home.jsp</result>
 		   </action>
+		   <!-- 配置商品管理Action 陆育静-->
+			<action name="adminProduct_*" class="cn.lj.ssh.product.adminaction.AdminProductAction" method="{1}">
+			<result name="findAll">/admin/product/list.jsp</result>
+			</action>
+		
 		</package>
+		
+		
 	</struts>
+	

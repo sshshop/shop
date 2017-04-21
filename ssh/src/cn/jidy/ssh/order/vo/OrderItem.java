@@ -2,7 +2,11 @@ package cn.jidy.ssh.order.vo;
 
 import cn.lj.ssh.product.vo.Product;
 
-
+/**
+ * 订单项的实体对象
+ * @author Rabit修改
+ *
+ */
 
 public class OrderItem {
 	private Integer itemid;
