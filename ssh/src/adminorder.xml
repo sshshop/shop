@@ -7,8 +7,7 @@
 		<package name="adminuser" extends="struts-default" namespace="/">
 		<!-- 配置后台用户登陆的Action -->
 		   <action name="adminOrder_*" class="cn.jidy.ssh.adminuser.action.AdminUserAction" method="{1}">
-			  	<result name="loginFail">/admin/index.jsp</result>
-			 	<result name="loginSuccess" >/admin/home.jsp</result>
+			  	<result name="findAll">/admin/order/list.jsp</result>
 		   </action>
 		</package>
 	</struts>

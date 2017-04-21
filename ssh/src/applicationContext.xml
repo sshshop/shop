@@ -45,8 +45,8 @@
 				<value>cn/lj/ssh/product/vo/Product_hbm.xml</value>
 				<value>cn/zy/ssh/categorysecond/vo/CategorySecond_hbm.xml</value>
 				<value>cn/jidy/ssh/adminuser/vo/AdminUser_hbm.xml</value>
-				<value>cn/jidy/ssh/order/vo/orderItem_hbm.xml</value>
-				<value>cn/jidy/ssh/order/vo/order_hbm.xml</value>
+				<value>cn/jidy/ssh/order/vo/OrderItem_hbm.xml</value>
+				<value>cn/jidy/ssh/order/vo/Order_hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -111,6 +111,10 @@
 	<!-- <bean id="categorySecondDao" class="cn.zy.ssh.categorysecond.dao.CategorySecondDao">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean> -->
+	<!-- 订单管理<蒋德义> -->
+	<bean id="orderDao" class="cn.jidy.ssh.order.dao.OrderDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
 
 
 
@@ -126,20 +130,27 @@
 	<bean id="productService" class="cn.lj.ssh.product.service.ProductService">
 		<property name="productDao" ref="productDao" />
 	</bean>
+	<!-- 订单管理业务层<蒋德义> -->
+	<bean id="orderService" class="cn.jidy.ssh.order.service.OrderService">
+		<property name="orderDao" ref="orderDao"></property>
+	</bean>
 
 
 	<!-- ===================================后台管理配置处====================================================== -->
 	<!-- action===================== -->
-	<!-- 登陆 -->
+	<!-- 登陆 <蒋德义>-->
 	<bean id="adminUserAction" class="cn.jidy.ssh.adminuser.action.AdminUserAction"
 		scope="prototype">
 		<property name="adminUserService" ref="adminUserService"></property>
 	</bean>
-
+	<!-- 后台订单管理 <蒋德义>-->
+	<bean id="adminOrderAction" class="cn.jidy.ssh.order.adminaction.AdminOrderAction" scope="prototype">
+		<property name="adminOrderService" ref="adminOrderService"></property>
+	</bean>
 
 
 	<!-- Service的配置 ====================== -->
-	<!-- 登陆 -->
+	<!-- 登陆 <蒋德义>-->
 	<bean id="adminUserService" class="cn.jidy.ssh.adminuser.service.AdminUserService">
 		<property name="adminUserDao" ref="adminUserDao"></property>
 	</bean>
@@ -147,7 +158,7 @@
 
 
 	<!-- Dao的配置===================== -->
-	<!-- 登陆 -->
+	<!-- 登陆<蒋德义> -->
 	<bean id="adminUserDao" class="cn.jidy.ssh.adminuser.dao.AdminUserDao">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
