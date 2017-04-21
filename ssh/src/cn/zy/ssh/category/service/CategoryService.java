@@ -33,5 +33,49 @@ public class CategoryService {
 		return categoryDao.findAll();
 
 	}
+	
+	/**
+	 * Service层后台一级分类管理添加功能的保存数据方法
+	 * @author Scream
+	 * 
+	 * */
+
+	public void save(Category category) {
+		categoryDao.save(category);
+		
+	}
+	
+	/**
+	 * Service层后台一级分类管理根据Cid进行查询的方法
+	 * @author Scream
+	 * 
+	 * */
+
+	public Category findByCid(Integer cid) {
+		// TODO Auto-generated method stub
+		return categoryDao.finByCid(cid);
+	}
+	
+	/**
+	 * 
+	 * Service层后台一级分类管理删除方法
+	 * @author Scream
+	 * 
+	 * */
+
+	public void delete(Category category) {
+		categoryDao.delete(category);
+	}
+
+	/**
+	 * 
+	 * Service层后台一级分类管理的修改方法
+	 * @author Scream
+	 * 
+	 * */
+	
+	public void update(Category category) {
+		categoryDao.update(category);
+	}
 
 }
