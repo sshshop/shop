@@ -147,7 +147,11 @@
 	<bean id="adminOrderAction" class="cn.jidy.ssh.order.adminaction.AdminOrderAction" scope="prototype">
 		<property name="adminOrderService" ref="adminOrderService"></property>
 	</bean>
-
+	
+	<!--后台管理action<陆育静>  -->
+	<bean id="adminProductAction" class="cn.lj.ssh.product.adminaction.AdminProductAction" scope="prototype">
+	<property name="productService" ref="productService"></property>
+	</bean>
 
 	<!-- Service的配置 ====================== -->
 	<!-- 登陆 <蒋德义>-->
