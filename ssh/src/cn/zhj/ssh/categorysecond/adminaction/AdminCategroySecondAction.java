@@ -68,5 +68,27 @@ public class AdminCategroySecondAction extends ActionSupport implements ModelDri
 		return "saveSuccess";
 	}
 	 
+	   //删除二级分类的方法
+		public String delete(){
+			//如果需要级联删除，要先查询再删除，配置cascade
+			categorySecond = categorySecondService.findByCsid(categorySecond.getCsid());
+			categorySecondService.delete(categorySecond);
+			return "deleteSuccess"; 
+		}
 
+	//编辑二级分类的方法
+		public String edit(){
+			//根据二级id查询二级分类的对象
+			categorySecond = categorySecondService.findByCsid(categorySecond.getCsid());
+		   //查询所有的一级分类
+			List<Category> cList = categoryService.findAll();
+		ActionContext.getContext().getValueStack().set("cList", cList);
+		return "editSucess";
+		}
+		
+	//修改二级分类的方法
+		public String update(){
+			categorySecondService.update(categorySecond);
+			return "updateSucess";
+		}
 }

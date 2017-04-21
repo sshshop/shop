@@ -4,13 +4,15 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 	
 	<struts>
-		<package name="admincategorysecond" extends="struts-default" namespace="/">
+		  <package name="admincategorysecond" extends="struts-default" namespace="/">
 	 
 		   <action name="adminCategorySecond_*" class="cn.zhj.ssh.categorysecond.adminaction.AdminCategroySecondAction" method="{1}">
 		   <result name="findAll">/admin/categorysecond/list.jsp</result>
 		   <result name="addPageSuccess">/admin/categorysecond/add.jsp</result>
 		   <result name="saveSuccess" type= "redirectAction" >adminCategorySecond_findAll.action?page=1</result>
-		  
+		   <result name="deleteSuccess" type= "redirectAction" >adminCategorySecond_findAll.action?page=1</result>
+		   <result name="editSucess">/admin/categorysecond/edit.jsp</result>
+		    <result name="updateSucess" type= "redirectAction" >adminCategorySecond_findAll.action?page=1</result>
 		   </action>
 		</package>
 	</struts>
