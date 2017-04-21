@@ -5,7 +5,10 @@
 <struts>
 <package name="order" extends="struts-default" namespace="/">
 	<action name="order_*" class="cn.jidy.ssh.order.action.OrderAction" method="{1}">
+		<result name="msg">/WEB-INF/jsp/cart.jsp</result>
+		<result name="login">/WEB-INF/jsp/login.jsp</result>
 		<result name="saveSuccess">/WEB-INF/jsp/order.jsp</result>
+		<result name="findByUidsuccess">/WEB-INF/jsp/orderlist.jsp</result>
 	</action>
 </package>
 </struts>

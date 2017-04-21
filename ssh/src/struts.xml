@@ -23,4 +23,6 @@
 	<include file="order.xml"></include>
 	<!--  二级分类管理的配置 <张辉娟> -->
 	<include file="admincategorysecond.xml"></include>
+	<!-- 增加购物车的配置文件<罗剑> -->
+	<include file="cart.xml"></include>
 </struts>

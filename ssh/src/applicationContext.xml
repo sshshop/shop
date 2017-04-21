@@ -85,13 +85,14 @@
 		<!-- 注入service -->
 		<property name="userService" ref="userService" />
 	</bean>
-
-	<!--一级分类模块的bean<罗剑> -->
-	<!-- <bean id="categoryAction" class="cn.zy.ssh.category.vo.Category" scope="prototype"> 
-		<property name="categoryService" ref="categoryService" /> </bean> -->
+	<!-- 商品模块action《罗剑》 -->
 	<bean id="productAction" class="cn.lj.ssh.product.action.ProductAction">
 		<property name="productService" ref="productService" />
 		<property name="categoryService" ref="categoryService" />
+	</bean>
+	<!-- 订单模块的action<罗剑> -->
+	<bean id="orderAction" class="cn.jidy.ssh.order.action.OrderAction">
+		<property name="orderService" ref="orderService" />
 	</bean>
 
 
@@ -108,9 +109,7 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	<!-- 二级分类的文件《罗剑》 -->
-	<!-- <bean id="categorySecondDao" class="cn.zy.ssh.categorysecond.dao.CategorySecondDao">
-		<property name="sessionFactory" ref="sessionFactory" />
-	</bean> -->
+	
 	<!-- 订单管理<蒋德义> -->
 	<bean id="orderDao" class="cn.jidy.ssh.order.dao.OrderDao">
 		<property name="sessionFactory" ref="sessionFactory" />

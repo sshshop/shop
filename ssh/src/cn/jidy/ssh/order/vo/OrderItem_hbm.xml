@@ -10,8 +10,8 @@
 		
 		<property name="count"/>
 		<property name="subtotal"/>
-		
-		<many-to-one name="product" lazy="false" class="cn.jidy.ssh.order.vo.OrderItem" column="pid"></many-to-one>
+		<!-- <错误》 -->
+		<many-to-one name="product" lazy="false" class="cn.lj.ssh.product.vo.Product" column="pid"></many-to-one>
 		
 		<many-to-one name="order" class="cn.jidy.ssh.order.vo.Order" column="oid"/>
 	</class>
