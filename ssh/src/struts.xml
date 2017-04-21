@@ -17,5 +17,6 @@
 	<include file="adminorder.xml"/>
 	<!-- 商品相关管理页面 <罗剑> -->
 	<include file="product.xml"></include>
-	
+	<!-- 商品订单的相关配置 -->
+	<include file="order.xml"></include>
 </struts>

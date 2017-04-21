@@ -93,7 +93,8 @@ public class ProductAction extends ActionSupport implements
 	 * @author Rabit
 	 * @return
 	 */
-	public String findByCsid() {	
+	public String findByCsid() {
+		System.out.println("csid="+csid+"+++++++++++++++++++++++page="+page);
 	    PageBean<Product> pageBean= productService.findByPageCsid(csid, page);
 		//pagebean存入值栈
 	    ActionContext.getContext().getValueStack().set("pageBean", pageBean);

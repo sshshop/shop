@@ -13,16 +13,6 @@ public class OrderService {
 	public void setOrderDao(OrderDao orderDao) {
 		this.orderDao = orderDao;
 	}
-
-	
-	
-	
-	
-	
-	
-
-
-
 	/*
 	 * **************后台分页查询处理***************************************
 	 * @author jidy
