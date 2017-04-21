@@ -152,6 +152,12 @@
 	<bean id="adminProductAction" class="cn.lj.ssh.product.adminaction.AdminProductAction" scope="prototype">
 	<property name="productService" ref="productService"></property>
 	</bean>
+	
+   <!--  后台二级分类管理的Actionn<张辉娟>  -->
+  <bean id="adminCategorySecondAction" class="cn.zhj.ssh.categorysecond.adminaction.AdminCategroySecondAction" scope="prototype">
+		<property name="categorySecondService" ref="categorySecondService"/>
+	    <property name="categoryService" ref = "categoryService"></property>
+	</bean>
 
 	<!-- Service的配置 ====================== -->
 	<!-- 登陆 <蒋德义>-->
@@ -159,12 +165,22 @@
 		<property name="adminUserDao" ref="adminUserDao"></property>
 	</bean>
 
-
+ <!-- 二级分类的service <张辉娟>-->
+   <bean id="categorySecondService" class="cn.zy.ssh.categorysecond.service.CategorySecondService">
+		<property name="categorySecondDao" ref="categorySecondDao"/>
+	</bean>
+	
 
 	<!-- Dao的配置===================== -->
 	<!-- 登陆<蒋德义> -->
 	<bean id="adminUserDao" class="cn.jidy.ssh.adminuser.dao.AdminUserDao">
 		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	
+		<!-- 二级分类管理的Dao<张辉娟> -->
+    <bean id="categorySecondDao" class="cn.zy.ssh.categorysecond.dao.CategorySecondDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 
 </beans>

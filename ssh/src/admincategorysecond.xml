@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	
+	<struts>
+		<package name="admincategorysecond" extends="struts-default" namespace="/">
+	 
+		   <action name="adminCategorySecond_*" class="cn.zhj.ssh.categorysecond.adminaction.AdminCategroySecondAction" method="{1}">
+		   <result name="findAll">/admin/categorysecond/list.jsp</result>
+		   <result name="addPageSuccess">/admin/categorysecond/add.jsp</result>
+		   <result name="saveSuccess" type= "redirectAction" >adminCategorySecond_findAll.action?page=1</result>
+		  
+		   </action>
+		</package>
+	</struts>
