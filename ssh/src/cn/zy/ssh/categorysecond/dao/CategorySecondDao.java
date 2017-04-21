@@ -8,11 +8,9 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import cn.lj.ssh.utils.PageHibernateCallback;
 import cn.zy.ssh.categorysecond.vo.CategorySecond;
 
-/*
- * 二级分类管理的Dao层
- */
+ 
 public class CategorySecondDao extends HibernateDaoSupport{
-  //Dao层的统计二级分类的个数的方法
+  
 	public int findCount() {
   String hql = "select count(*) from CategorySecond";
   List<Long> list = this.getHibernateTemplate().find(hql);
@@ -21,7 +19,7 @@ public class CategorySecondDao extends HibernateDaoSupport{
   }
 		return 0;
 	}
-	// DAO中分页查询的方法
+	 
 	public List<CategorySecond> findByPage(int begin, int limit) {
 		String hql = "from CategorySecond order by csid desc";
 		List<CategorySecond> list = this.getHibernateTemplate().execute(
@@ -34,27 +32,32 @@ public class CategorySecondDao extends HibernateDaoSupport{
 		return null;
 	}
 	
-	//Dao层的保存二级分类的方法
+	 
 	public void save(CategorySecond categorySecond) {
 		this.getHibernateTemplate().save(categorySecond);
 		
 	}
 	
-	//Dao层根据二级分类的id查询二级分类
+	 
 	public CategorySecond findByCsid(Integer csid) {
 		 
 		return this.getHibernateTemplate().get(CategorySecond.class, csid);
 	}
 	
-	//Dao层删除二级分类的方法
+	 
 		 public void delete(CategorySecond categorySecond) {
 				this.getHibernateTemplate().delete(categorySecond);
 			}
 		 
-		//Dao层删除二级分类的方法
+		 
 		public void update(CategorySecond categorySecond) {
 			 this.getHibernateTemplate().update(categorySecond);
 			
+		}
+		//DAO层查询所有的方法
+		public List<CategorySecond> findAll() {
+			String hql="from CategorySecond";
+			return this.getHibernateTemplate().find(hql);
 		}
 
 		

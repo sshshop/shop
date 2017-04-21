@@ -7,8 +7,8 @@
 		<link href="${pageContext.request.contextPath}/css/Style1.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" src="${pageContext.request.contextPath}/js/public.js"></script>
 		<script type="text/javascript">
-			function addCategory(){
-				window.location.href = "${pageContext.request.contextPath}/admin/category/add.jsp";
+			function addProduct(){
+				window.location.href = "${pageContext.request.contextPath}/adminProduct_addPage.action";
 			}
 		</script>
 	</HEAD>
@@ -23,7 +23,7 @@
 					</tr>
 					<tr>
 						<td class="ta_01" align="right">
-							<button type="button" id="add" name="add" value="添加" class="button_add" onclick="addCategory()">
+							<button type="button" id="add" name="add" value="添加" class="button_add" onclick="addProduct()">
 &#28155;&#21152;
 </button>
 
@@ -45,6 +45,9 @@
 									</td>
 									<td width="7%" align="center">
 										商品名称
+									</td>
+									<td width="7%" align="center">
+										商品价格
 									</td>
 									<td width="7%" align="center">
 										是否热门

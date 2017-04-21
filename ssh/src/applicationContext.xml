@@ -151,6 +151,7 @@
 	<!--后台管理action<陆育静>  -->
 	<bean id="adminProductAction" class="cn.lj.ssh.product.adminaction.AdminProductAction" scope="prototype">
 	<property name="productService" ref="productService"></property>
+	<property name="categorySecondService" ref="categorySecondService"></property>
 	</bean>
 	
    <!--  后台二级分类管理的Actionn<张辉娟>  -->

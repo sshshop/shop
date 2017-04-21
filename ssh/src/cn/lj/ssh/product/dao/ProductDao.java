@@ -161,5 +161,13 @@ public class ProductDao extends HibernateDaoSupport {
 		return null;
 	}
 	
+	/**
+	 * 
+	 * @author 盖世太保
+	 */
+	// DAO中的保存商品的方法
+		public void save(Product product) {
+			this.getHibernateTemplate().save(product);
+		}
 	
 }
