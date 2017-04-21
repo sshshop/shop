@@ -10,5 +10,4 @@
 			<result name="findbycsid">/WEB-INF/jsp/productList.jsp</result>
 		</action>
 	</package>
-
 </struts>

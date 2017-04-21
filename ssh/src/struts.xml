@@ -13,7 +13,9 @@
 	<include file="category.xml"></include>
 	<!-- 后台管理员登录模块<蒋德义> -->
 	<include file="adminuser.xml"></include>
+	<!-- 后台订单管理模块<蒋德义> -->
+	<include file="adminorder.xml"/>
 	<!-- 商品相关管理页面 <罗剑> -->
 	<include file="product.xml"></include>
-
+	
 </struts>

@@ -45,6 +45,8 @@
 				<value>cn/lj/ssh/product/vo/Product_hbm.xml</value>
 				<value>cn/zy/ssh/categorysecond/vo/CategorySecond_hbm.xml</value>
 				<value>cn/jidy/ssh/adminuser/vo/AdminUser_hbm.xml</value>
+				<value>cn/jidy/ssh/order/vo/orderItem_hbm.xml</value>
+				<value>cn/jidy/ssh/order/vo/order_hbm.xml</value>
 			</list>
 		</property>
 	</bean>

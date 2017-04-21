@@ -23,6 +23,11 @@ org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
   		
   </filter-mapping>
   
+  	<!-- 创建session监听 -->
+ 	<listener> <listener-class>cn.jidy.ssh.interceptor.OnlineUserListener</listener-class> </listener> 
+	<!--一分钟不操作就销毁session -->
+ 	<session-config> <session-timeout>1</session-timeout> </session-config>
+  
   
   <display-name>ssh</display-name>
   <welcome-file-list>
