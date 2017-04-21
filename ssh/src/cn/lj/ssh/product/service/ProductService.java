@@ -14,7 +14,7 @@ public class ProductService {
 	public ProductDao getProductDao() {
 		return productDao;
 	}
-
+	
 	public void setProductDao(ProductDao productDao) {
 		this.productDao = productDao;
 	}
@@ -36,8 +36,8 @@ public class ProductService {
 		return productDao.findNew();
 	}
 
-	public Product findByPid(Integer integer) {
-		return productDao.findByPid(integer);
+	public Product findByPid(Integer Pid) {
+		return productDao.findByPid(Pid);
 	}
 
 	
@@ -147,9 +147,12 @@ public class ProductService {
 
 		// 业务层保存商品方法:
 		public void save(Product product) {
-			productDao.save(product);
+			productDao.save(product); 
 		}
 
-		
+		// 业务层删除商品
+		public void delete(Product product) {
+			productDao.delete(product);
+		}
 	
 }
