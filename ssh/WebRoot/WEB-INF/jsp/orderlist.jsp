@@ -35,11 +35,19 @@
 								color="red"><s:property value="#order.total" />
 							</font>
 							&nbsp;&nbsp;&nbsp;&nbsp;<font color="red">
-						<s:if test="#order.state==1">还未付款！！<a href="#"><font color="red">付款</font></a></s:if>
-						<s:if test="#order.state==2">已经付款</s:if>
-						<s:if test="#order.state==3"><a href="#"><font color="red">确认收货</font></a></s:if>
-						<s:if test="#order.state==4">交易完成</s:if>
-						</font></th>
+								<s:if test="#order.state == 1">
+									<a href="${ pageContext.request.contextPath }/order_findByOid.action?oid=<s:property value="#order.oid" />">付款</a>
+								</s:if>
+								<s:if test="#order.state == 2">
+									已付款
+								</s:if>
+								<s:if test="#order.state == 3">
+									<a href="${ pageContext.request.contextPath }/order_updateState.action?oid=<s:property value="#order.oid" />">确认收货</a>
+								</s:if>
+								<s:if test="#order.state == 4">
+									交易成功
+								</s:if>
+							</font>
 					</tr>
 					<tr>
 						<th>图片</th>

@@ -106,4 +106,20 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 		ActionContext.getContext().getValueStack().set("pageBean", pageBean);
 		return "findByUidsuccess";
 	}
+	
+	/*
+	 * @author jidy
+	 *后台修改
+	 */
+	
+	// 确认收货，修改订单的状态
+	public String updateState(){
+		//根据订单id的值获取订单
+		Order currOrder=orderService.findByOid(order.getOid());
+		//修改状态
+		currOrder.setState(4);
+		orderService.update(currOrder);
+		//页面跳转
+		return "updateStateSuccess";
+	}
 }

@@ -18,7 +18,7 @@
 		<many-to-one name="user" lazy="false" class="cn.lj.ssh.user.vo.User" column="uid"/>
 	
 		<!-- 订单与订单项关联配置 -->
-		<set name="orderItems" lazy="false" cascade="save-update">
+		<set name="orderItems" order-by="itemid" lazy="false" cascade="save-update">
 			<key column="oid"/>
 			<one-to-many class="cn.jidy.ssh.order.vo.OrderItem"/>
 		</set>

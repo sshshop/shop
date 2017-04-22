@@ -9,6 +9,8 @@
 		<result name="login">/WEB-INF/jsp/login.jsp</result>
 		<result name="saveSuccess">/WEB-INF/jsp/order.jsp</result>
 		<result name="findByUidsuccess">/WEB-INF/jsp/orderlist.jsp</result>
+		<!-- 前台订单状态的修改  <蒋德义> -->
+		<result name="updateStateSuccess" type="redirectAction">order_findByUid.action?page=1</result>
 	</action>
 </package>
 </struts>
