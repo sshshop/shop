@@ -7,6 +7,9 @@
 		<action name="userAdmin_*" class="cn.hyy.ssh.useradmin.action.UserAdminAction" method="{1}">
 			<result name="findAll">/admin/useradmin/list.jsp</result>
 			<result name="findByState">/admin/useradmin/list.jsp</result>
+			<result name="edit">/admin/useradmin/edit.jsp</result>
+			<result name="updateSuccess" type="redirectAction">userAdmin_findAll.action</result>
+			<result name="deleteSuccess" type="redirectAction">userAdmin_findAll.action</result>
 		</action>
 	</package>
 </struts>

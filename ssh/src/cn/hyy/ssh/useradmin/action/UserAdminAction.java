@@ -67,5 +67,32 @@ public class UserAdminAction extends ActionSupport implements ModelDriven<User>{
 		return "findByState";
 	}
 	
+	/**
+	 * 
+	 * 编辑用户信息
+	 * @author Scream
+	 * 
+	 * */
 	
+	public String edit(){
+		user = userAdminService.findByUid(user.getUid());
+		return "edit";
+	}
+	
+	//修改用户信息方法
+	public String update(){
+		userAdminService.update(user);
+		return "updateSuccess";
+	}
+	
+	/**
+	 * 
+	 * 删除用户信息
+	 * @author Scream
+	 * 
+	 * */
+	public String delete(){
+		userAdminService.delete(user);
+		return "deleteSuccess";
+	}
 }

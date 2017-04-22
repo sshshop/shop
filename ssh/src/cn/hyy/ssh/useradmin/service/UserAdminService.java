@@ -34,5 +34,20 @@ public class UserAdminService {
 		// TODO Auto-generated method stub
 		return userAdminDao.findByState(state);
 	}
+	
+	//Service层根据UID查询用户
+	public User findByUid(Integer uid) {
+		return userAdminDao.findByUid(uid);
+	}
+	
+	//Service层修改用户信息方法
+	public void update(User user) {
+		userAdminDao.update(user);
+	}
+	
+	//Service层删除用户信息方法
+	public void delete(User user) {
+		userAdminDao.delete(user);
+	}
 
 }

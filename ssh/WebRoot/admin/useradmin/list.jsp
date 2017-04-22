@@ -7,7 +7,10 @@
 		<link href="${pageContext.request.contextPath}/css/Style1.css" rel="stylesheet" type="text/css" />
 		<script language="javascript" src="${pageContext.request.contextPath}/js/public.js"></script>
 		<script type="text/javascript">
-			function addUser(){
+			function addUser1(){
+				window.location.href = "${pageContext.request.contextPath}/userAdmin_findByState.action?state=0";
+			}
+			function addUser2(){
 				window.location.href = "${pageContext.request.contextPath}/userAdmin_findByState.action?state=1";
 			}
 		</script>
@@ -24,8 +27,11 @@
 					<tr>
 						
 						<td class="ta_01" align="right">
-							<button type="button" id="add" name="add" value="添加" class="button_add" onclick="addUser()">
-&#28155;&#21152;
+							<button type="button" id="add" name="add" value="查询" class="button_add" onclick="addUser1()">
+&#26597;&#35810;&#26410;&#28608;&#27963;&#29992;&#25143;
+</button>
+							<button type="button" id="add" name="add" value="查询" class="button_add" onclick="addUser2()">
+&#26597;&#35810;&#24050;&#28608;&#27963;&#29992;&#25143;
 </button>
 
 						</td>
@@ -54,7 +60,7 @@
 									</td>
 									
 									<td align="center" width="10%">
-										激活状态
+										地址
 									</td>
 									<td width="7%" align="center">
 										编辑
@@ -84,16 +90,16 @@
 											</td>
 											<td style="CURSOR: hand; HEIGHT: 22px" align="center"
 												width="10%">
-												<s:property value="#u.state"/>
+												<s:property value="#u.addr"/>
 											</td>
 											<td align="center" style="HEIGHT: 22px">
-												<a href="${ pageContext.request.contextPath }/adminCategory_edit.action?cid=<s:property value="#c.cid"/>">
+												<a href="${ pageContext.request.contextPath }/userAdmin_edit.action?uid=<s:property value="#u.uid"/>">
 													<img src="${pageContext.request.contextPath}/images/i_edit.gif" border="0" style="CURSOR: hand">
 												</a>
 											</td>
 									
 											<td align="center" style="HEIGHT: 22px">
-												<a href="${ pageContext.request.contextPath }/adminCategory_delete.action?cid=<s:property value="#c.cid"/>">
+												<a href="${ pageContext.request.contextPath }/userAdmin_delete.action?uid=<s:property value="#u.uid"/>">
 													<img src="${pageContext.request.contextPath}/images/i_del.gif" width="16" height="16" border="0" style="CURSOR: hand">
 												</a>
 											</td>
