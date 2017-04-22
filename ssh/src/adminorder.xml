@@ -4,9 +4,9 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 	
 	<struts>
-		<package name="adminuser" extends="struts-default" namespace="/">
+		<package name="adminorder" extends="struts-default" namespace="/">
 		<!-- 配置后台用户登陆的Action -->
-		   <action name="adminOrder_*" class="cn.jidy.ssh.adminuser.action.AdminUserAction" method="{1}">
+		   <action name="adminOrder_*" class="cn.jidy.ssh.order.adminaction.AdminOrderAction" method="{1}">
 			  	<result name="findAll">/admin/order/list.jsp</result>
 		   </action>
 		</package>

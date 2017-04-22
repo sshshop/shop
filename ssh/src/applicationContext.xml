@@ -94,6 +94,8 @@
 	<bean id="orderAction" class="cn.jidy.ssh.order.action.OrderAction">
 		<property name="orderService" ref="orderService" />
 	</bean>
+	
+	
 
 
 	<!-- Dao的配置 =========================== -->
@@ -137,14 +139,14 @@
 
 	<!-- ===================================后台管理配置处====================================================== -->
 	<!-- action===================== -->
-	<!-- 登陆 <蒋德义>-->
+	<!-- 后台登陆 <蒋德义>-->
 	<bean id="adminUserAction" class="cn.jidy.ssh.adminuser.action.AdminUserAction"
 		scope="prototype">
 		<property name="adminUserService" ref="adminUserService"></property>
 	</bean>
 	<!-- 后台订单管理 <蒋德义>-->
 	<bean id="adminOrderAction" class="cn.jidy.ssh.order.adminaction.AdminOrderAction" scope="prototype">
-		<property name="adminOrderService" ref="adminOrderService"></property>
+		<property name="orderService" ref="orderService"></property>
 	</bean>
 	
 	<!--后台管理action<陆育静>  -->
