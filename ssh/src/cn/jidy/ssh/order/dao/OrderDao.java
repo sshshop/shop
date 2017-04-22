@@ -85,15 +85,21 @@ public class OrderDao extends HibernateDaoSupport{
 		return null;
 	}
 
-	
+	/**
+	 * 修改订单的信息
+	 * @param currOrder：订单信息
+	 */
 	public void update(Order currOrder) {
-		// TODO Auto-generated method stub
-		
+		this.getHibernateTemplate().update(currOrder);
 	}
-
+	/**
+	 * 根据订单id查询订单信息
+	 * @param oid：订单id
+	 * @return
+	 */
 	public Order findByOid(Integer oid) {
-		// TODO Auto-generated method stub
-		return null;
+		 
+		return this.getHibernateTemplate().get(Order.class, oid);
 	}
 
 }

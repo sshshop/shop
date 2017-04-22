@@ -86,10 +86,21 @@ public class OrderService {
 	public List<OrderItem> findOderItem(Integer oid) {
 		return orderDao.findOrderItem(oid);
 	}
+	/**
+	 * 修改订单操作
+	 * @author Rabit
+	 * @param currOrder：订单信息
+	 */
 	public void update(Order currOrder) {
 		orderDao.update(currOrder);
 		
 	}
+	/**
+	 * @author Rabit
+	 * 业务层根据订单id查询订单详情
+	 * @param oid：订单id
+	 * @return
+	 */
 	public Order findByOid(Integer oid) {
 		return orderDao.findByOid(oid);
 	}

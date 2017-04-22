@@ -4,7 +4,10 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<package name="user" extends="struts-default" namespace="/">
-	
+	<global-results>
+			<result name="msg">/WEB-INF/jsp/msg.jsp</result>
+			<result name="login">/admin/index.jsp</result>
+		</global-results>
 	<!-- 配置首页访问的Action -->
 		<action name="index" class="cn.lyj.ssh.index.action.IndexAction">
 			<result name="index">/WEB-INF/jsp/index.jsp</result>
@@ -19,7 +22,7 @@
 			<result name="loginSuccess" type="redirectAction">index</result>
 			<result name="login">/WEB-INF/jsp/login.jsp</result>
 			<result name="quit" type="redirectAction">index</result>
-			<result name="active">/WEB-INF/jsp/login.jsp</result>
+			<result name="active">/WEB-INF/jsp/msg.jsp</result>
 			<!-- 注册验证码验证失败，返回到注册页 -->
 			<result name="checkcodeFail">/WEB-INF/jsp/register.jsp</result>
 			<!-- 登录验证码验证失败，返回到注册页 -->
