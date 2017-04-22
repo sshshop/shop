@@ -6,6 +6,7 @@ import org.springframework.orm.hibernate3.HibernateCallback;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import cn.jidy.ssh.order.vo.Order;
+import cn.jidy.ssh.order.vo.OrderItem;
 import cn.lj.ssh.utils.PageHibernateCallback;
 
 public class OrderDao extends HibernateDaoSupport{
@@ -69,6 +70,15 @@ public class OrderDao extends HibernateDaoSupport{
 		String hql = "from Order o where o.user.uid = ? order by o.ordertime desc";
 		List<Order> list=this.getHibernateTemplate().execute(new PageHibernateCallback<Order>(hql, new Object[]{uid}, begin, limit));
 		System.out.println(list.size()+"-----------------------------------------------");
+		if (list!=null&&list.size()>0) {
+			return list;
+		}
+		return null;
+	}
+	//根据oid查询订单项
+	public List<OrderItem> findOrderItem(Integer oid) {
+		String hql="from OrderItem oi where oi.order.oid=?";
+		List<OrderItem> list=this.getHibernateTemplate().find(hql,oid);
 		if (list!=null&&list.size()>0) {
 			return list;
 		}

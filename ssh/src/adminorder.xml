@@ -8,6 +8,7 @@
 		<!-- 配置后台用户登陆的Action -->
 		   <action name="adminOrder_*" class="cn.jidy.ssh.order.adminaction.AdminOrderAction" method="{1}">
 			  	<result name="findAll">/admin/order/list.jsp</result>
+			  	<result name="findOrderItem">/admin/order/orderItem.jsp</result>
 		   </action>
 		</package>
 	</struts>

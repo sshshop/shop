@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import cn.jidy.ssh.order.dao.OrderDao;
 import cn.jidy.ssh.order.vo.Order;
+import cn.jidy.ssh.order.vo.OrderItem;
 import cn.lj.ssh.utils.PageBean;
 @Transactional
 public class OrderService {
@@ -80,6 +81,10 @@ public class OrderService {
 		pageBean.setList(list);
 		return pageBean;
 		
+	}
+	//根据订单id查询订单项。
+	public List<OrderItem> findOderItem(Integer oid) {
+		return orderDao.findOrderItem(oid);
 	}
 	
 

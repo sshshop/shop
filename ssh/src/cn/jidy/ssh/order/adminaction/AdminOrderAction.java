@@ -1,7 +1,10 @@
 package cn.jidy.ssh.order.adminaction;
 
+import java.util.List;
+
 import cn.jidy.ssh.order.service.OrderService;
 import cn.jidy.ssh.order.vo.Order;
+import cn.jidy.ssh.order.vo.OrderItem;
 import cn.lj.ssh.utils.PageBean;
 
 import com.opensymphony.xwork2.ActionContext;
@@ -39,5 +42,12 @@ public class AdminOrderAction extends ActionSupport implements ModelDriven<Order
 		ActionContext.getContext().getValueStack().set("pageBean", pageBean);
 		//跳转
 		return "findAll";
+	}
+	
+	public String findOrderItem(){
+		List<OrderItem> list = orderService.findOderItem(order.getOid());
+		//通过值栈把值保存到页面上去。
+		ActionContext.getContext().getValueStack().set("list", list);
+		return "findOderItem";
 	}
 }
