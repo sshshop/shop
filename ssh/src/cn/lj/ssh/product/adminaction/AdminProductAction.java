@@ -131,4 +131,35 @@ public class AdminProductAction extends ActionSupport implements ModelDriven<Pro
 		return "deleteSuccess";
 	}
 	
+	//编辑页面的方法
+	public String edit(){
+		//先查询在编辑
+		product=productService.findByPid(product.getPid());
+		//查询所有二级分类
+		List<CategorySecond> csList =categorySecondService.findAll();
+		//页面保存数据
+		ActionContext.getContext().getValueStack().set("csList",csList);
+		//页面跳转
+		return "editSuccess";
+	}
+	//修改商品的方法
+	public String update() throws IOException{
+		product.setPdate(new Date());
+		//文件上传
+		if(upload!=null){
+			//删除原来的图片
+			String path=product.getImage();
+			File file=new File(ServletActionContext.getServletContext().getRealPath("/"+path));
+			file.delete();
+			//获得文件上传的绝对路径
+			String realPath=ServletActionContext.getServletContext().getRealPath("/products");
+			File diskFile=new File(realPath+"//"+uploadFileName);
+			FileUtils.copyFile(upload, diskFile);
+			product.setImage("products/"+uploadFileName);
+		}
+		//修改商品的数据
+		productService.update(product);
+		//页面跳转
+		return "updateSuccess";
+	}
 }

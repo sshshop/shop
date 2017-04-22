@@ -25,4 +25,6 @@
 	<include file="admincategorysecond.xml"></include>
 	<!-- 增加购物车的配置文件<罗剑> -->
 	<include file="cart.xml"></include>
+	<!--  后台商品管理的配置 <陆育静> -->
+	<include file="adminproduct.xml"></include>
 </struts>
