@@ -188,7 +188,7 @@
 						|
 					</li>
 					<li>
-						<a>法律声明</a>
+						<a href="LegalNotices.html">法律声明</a>
 						|
 					</li>
 					<li>
@@ -208,7 +208,7 @@
 						|
 					</li>
 					<li>
-						<a>广告声明</a>
+						<a href="AdverStatement.html">广告声明</a>
 						
 					</li>
 		</ul>
