@@ -27,4 +27,5 @@
 	<include file="cart.xml"></include>
 	<!--  后台商品管理的配置 <陆育静> -->
 	<include file="adminproduct.xml"></include>
+	<include file="useradmin.xml"></include>
 </struts>

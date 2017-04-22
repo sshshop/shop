@@ -21,6 +21,8 @@ public class IndexAction extends ActionSupport {
 	private ProductService productService;//注入商品的业务层
 	private CategoryService categoryService;
 	
+	
+	
 	public ProductService getProductService() {
 		return productService;
 	}
@@ -45,4 +47,5 @@ public class IndexAction extends ActionSupport {
 		ActionContext.getContext().getValueStack().set("nList", nList);
 		return "index";
 	}
+	
 }

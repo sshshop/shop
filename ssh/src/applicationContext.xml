@@ -116,6 +116,8 @@
 	<bean id="orderDao" class="cn.jidy.ssh.order.dao.OrderDao">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	
+	
 
 
 
@@ -160,6 +162,11 @@
 		<property name="categorySecondService" ref="categorySecondService"/>
 	    <property name="categoryService" ref = "categoryService"></property>
 	</bean>
+	
+	<!-- 用户管理的Action<何永毅> -->
+	<bean id="userAdminAction" class="cn.hyy.ssh.useradmin.action.UserAdminAction">
+		<property name="userAdminService" ref="userAdminService" />
+	</bean>
 
 	<!-- Service的配置 ====================== -->
 	<!-- 登陆 <蒋德义>-->
@@ -172,6 +179,10 @@
 		<property name="categorySecondDao" ref="categorySecondDao"/>
 	</bean>
 	
+	<!-- 用户管理的Service -->
+	<bean id="userAdminService" class="cn.hyy.ssh.useradmin.service.UserAdminService">
+		<property name="userAdminDao" ref="userAdminDao" />
+	</bean>
 
 	<!-- Dao的配置===================== -->
 	<!-- 登陆<蒋德义> -->
@@ -185,4 +196,9 @@
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 
+
+		<!-- 用户管理Dao<何永毅> -->
+	<bean id="userAdminDao" class="cn.hyy.ssh.useradmin.dao.UserAdminDao">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
 </beans>

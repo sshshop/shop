@@ -20,6 +20,8 @@ public class CategoryDao extends HibernateDaoSupport{
 		List<Category> list = this.getHibernateTemplate().find(hql);
 		return list;
 	}
+	
+	
 	/**
 	 * Dao层后台一级分类管理添加功能的保存数据方法
 	 * @author Scream

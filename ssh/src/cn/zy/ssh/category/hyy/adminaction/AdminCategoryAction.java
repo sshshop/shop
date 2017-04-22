@@ -69,6 +69,5 @@ public class AdminCategoryAction extends ActionSupport implements ModelDriven<Ca
 		categoryService.update(category);
 		return "updateSuccess";
 	}
-	
 
 }
