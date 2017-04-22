@@ -17,7 +17,7 @@
 	<%@ include file="menu.jsp" %>>	
 	
 </div>	<div class="container cart">
-		<s:if test="#session.cart.cartItem.size()!=0">
+		<s:if test="#session.cart.cartItems.size() !=0">
 		<div class="span24">
 			<div class="step step1">
 				
@@ -34,7 +34,7 @@
 					    <s:iterator var="cartItem" value="#session.cart.cartItems">
 						<tr>
 							<td width="60">
-								<input type="hidden" name="id" value="22">
+                            <input type="hidden" name="id" value="22"> 
 								<img src="${pageContext.request.contextPath}/<s:property value="#cartItem.product.image"/>">
 							</td>
 							<td>
@@ -66,8 +66,8 @@
 					商品金额: <strong id="effectivePrice">￥<s:property value="#session.cart.total"/>元</strong>
 				</div>
 				<div class="bottom">
-					<a href="${ pageContext.request.contextPath }/cart_clearCart.action }" id="clear" class="clear">清空购物车</a>
-					<a href="./会员登录.htm" id="submit" class="submit">提交订单</a>
+					<a href="${ pageContext.request.contextPath }/cart_clearCart.action" id="clear" class="clear">清空购物车</a>
+					<a href="${ pageContext.request.contextPath }/order_saveOrder.action" id="submit" class="submit">提交订单</a>
 				</div>
 		</div>
 		</s:if>

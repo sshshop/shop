@@ -201,4 +201,8 @@
 	<bean id="userAdminDao" class="cn.hyy.ssh.useradmin.dao.UserAdminDao">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
+	<!-- 购物车的Action<陈达> -->
+	<bean id="cartAction" class="cn.cd.ssh.cart.action.CartAction" scope="prototype">
+	<property name="productService" ref="productService"></property>
+    </bean>
 </beans>

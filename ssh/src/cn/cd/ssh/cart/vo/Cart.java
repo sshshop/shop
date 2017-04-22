@@ -46,7 +46,7 @@ public class Cart implements Serializable{
 		if(map.containsKey(pid)){
 			//存在
 			CartItem _cartItem = map.get(pid);//获得购物车中原来的购物项
-			_cartItem.setCount(cartItem.getCount()+cartItem.getCount());
+			_cartItem.setCount(_cartItem.getCount()+cartItem.getCount());
 			
 		}else{
 			//不存在

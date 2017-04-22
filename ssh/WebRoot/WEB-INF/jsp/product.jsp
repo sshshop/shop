@@ -9,6 +9,14 @@
 	rel="stylesheet" type="text/css">
 <link href="${pageContext.request.contextPath}/css/product.css"
 	rel="stylesheet" type="text/css">
+<script>
+  function saveCart(){
+  
+  document.getElementById("cartForm").submit();
+  
+  }
+
+</script>	
 
 
 </head>
@@ -102,12 +110,14 @@
 					</dd>
 				</dl>
 			</div>
+			<form id="cartForm" action="${ pageContext.request.contextPath }/cart_addCart.action" method="post">
+			<input type="hidden" name="pid" value="<s:property value="model.pid" />">
 			<div class="action">
 
 				<dl class="quantity">
 					<dt>购买数量:</dt>
 					<dd>
-						<input id="quantity" name="quantity" value="1" maxlength="4"
+						<input id="count" name="count" value="1" maxlength="4"
 							onpaste="return false;" type="text" />
 							<div>
 								<span id="increase" class="increase">&nbsp;</span> <span
@@ -117,12 +127,14 @@
 					<dd>件</dd>
 				</dl>
 				<div class="buy">
-					<input id="addCart" class="addCart" value="加入购物车" type="button" />
+					<input id="addCart" class="addCart" value="加入购物车" type="button" onclick="saveCart()"/>
 				</div>
 			</div>
+			</form>
 			<div id="bar" class="bar">
 				<ul>
-					<li id="introductionTab"><a href="#introduction">商品介绍</a></li>
+					<li id="introductionTab"><a href="#introduction">商品介绍</a>
+					</li>
 
 				</ul>
 			</div>
