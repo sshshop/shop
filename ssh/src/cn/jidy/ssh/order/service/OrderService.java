@@ -86,6 +86,13 @@ public class OrderService {
 	public List<OrderItem> findOderItem(Integer oid) {
 		return orderDao.findOrderItem(oid);
 	}
+	public void update(Order currOrder) {
+		orderDao.update(currOrder);
+		
+	}
+	public Order findByOid(Integer oid) {
+		return orderDao.findByOid(oid);
+	}
 	
 
 }

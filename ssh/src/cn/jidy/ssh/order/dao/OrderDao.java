@@ -85,4 +85,15 @@ public class OrderDao extends HibernateDaoSupport{
 		return null;
 	}
 
+	
+	public void update(Order currOrder) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Order findByOid(Integer oid) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
