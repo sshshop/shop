@@ -5,11 +5,23 @@
 	
 	<struts>
 		<package name="adminorder" extends="struts-default" namespace="/">
+		<!-- 定义拦截器  <蒋德义>-->
+		<interceptors>
+			<interceptor name="privilegeInterceptor" class="cn.jidy.ssh.interceptor.PrivilegeInterceptor"></interceptor>
+		</interceptors>
+		<!--  拦截器跳转页面<蒋德义> -->
+		<global-results>
+			<result name="adminLogin">/admin/index.jsp</result>
+		</global-results>
+			
 		<!-- 配置后台用户登陆的Action -->
 		   <action name="adminOrder_*" class="cn.jidy.ssh.order.adminaction.AdminOrderAction" method="{1}">
 			  	<result name="findAll">/admin/order/list.jsp</result>
 			  	<result name="findOrderItem">/admin/order/orderItem.jsp</result>
 			  	<result name="updateStateSuccess" type="redirectAction">adminOrder_findAll.action?page=1</result>
+			  	<!-- 拦截器的运用 <蒋德义>-->
+				<interceptor-ref name="privilegeInterceptor"></interceptor-ref>
+				<interceptor-ref name="defaultStack"></interceptor-ref>
 		   </action>
 		</package>
 	</struts>

@@ -5,7 +5,15 @@
 	
 	<struts>
 		<package name="adminproduct" extends="struts-default" namespace="/">
-		
+		 <!-- 定义拦截器  <蒋德义>-->
+			<interceptors>
+				<interceptor name="privilegeInterceptor" class="cn.jidy.ssh.interceptor.PrivilegeInterceptor"></interceptor>
+			</interceptors>
+			<!--  拦截器跳转页面<蒋德义> -->
+			<global-results>
+				<result name="adminLogin">/admin/index.jsp</result>
+			</global-results>
+			
 		   <!-- 配置后台商品管理Action 陆育静-->
 			<action name="adminProduct_*" class="cn.lj.ssh.product.adminaction.AdminProductAction" method="{1}">
 			<result name="findAll">/admin/product/list.jsp</result>
@@ -14,6 +22,9 @@
 			<result name="deleteSuccess" type="redirectAction">adminProduct_findAll.action?page=1</result>
 			<result name="editSuccess" >/admin/product/edit.jsp</result>
 			<result name="updateSuccess" type="redirectAction">adminProduct_findAll.action?page=1</result>
+			<!-- 拦截器的运用 <蒋德义>-->
+			<interceptor-ref name="privilegeInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
 			</action>
 			
 		</package>

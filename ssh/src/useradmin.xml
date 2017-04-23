@@ -4,12 +4,25 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 <struts>
 	<package name="useradmin" extends="struts-default" namespace="/">
+		<!-- 定义拦截器  <蒋德义>-->
+		<interceptors>
+			<interceptor name="privilegeInterceptor" class="cn.jidy.ssh.interceptor.PrivilegeInterceptor"></interceptor>
+		</interceptors>
+		<!--  拦截器跳转页面<蒋德义> -->
+		<global-results>
+			<result name="adminLogin">/admin/index.jsp</result>
+		</global-results>
+			
 		<action name="userAdmin_*" class="cn.hyy.ssh.useradmin.action.UserAdminAction" method="{1}">
 			<result name="findAll">/admin/useradmin/list.jsp</result>
 			<result name="findByState">/admin/useradmin/list.jsp</result>
 			<result name="edit">/admin/useradmin/edit.jsp</result>
 			<result name="updateSuccess" type="redirectAction">userAdmin_findAll.action</result>
 			<result name="deleteSuccess" type="redirectAction">userAdmin_findAll.action</result>
+			<!-- 拦截器的运用 <蒋德义>-->
+			<interceptor-ref name="privilegeInterceptor"></interceptor-ref>
+			<interceptor-ref name="defaultStack"></interceptor-ref>
+			
 		</action>
 	</package>
 </struts>

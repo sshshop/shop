@@ -19,7 +19,7 @@ public class PrivilegeInterceptor extends MethodFilterInterceptor {
 		if(existAdminUser==null){
 			ActionSupport actionSupport=(ActionSupport) actionInvocation.getAction();
 			actionSupport.addActionError("亲，您还没有登录，没有访问权限");
-			return "loginFail";
+			return "adminLogin";
 		}else{
 			//用户登录
 			return actionInvocation.invoke();
