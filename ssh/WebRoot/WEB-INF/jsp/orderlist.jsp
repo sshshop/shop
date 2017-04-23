@@ -29,6 +29,13 @@
 		
 				<table>
 					<tbody>
+					<tr>
+						<th>图片</th>
+						<th>商品</th>
+						<th>价格</th>
+						<th>数量</th>
+						<th>小计</th>
+					</tr>
 					<s:iterator var="order" value="pageBean.list">
 						<tr>
 						<th colspan="5">订单编号：<s:property value="#order.oid"/>&nbsp;&nbsp;&nbsp;&nbsp;订单金额:<font
@@ -48,18 +55,13 @@
 									交易成功
 								</s:if>
 							</font>
+							</th>
 					</tr>
-					<tr>
-						<th>图片</th>
-						<th>商品</th>
-						<th>价格</th>
-						<th>数量</th>
-						<th>小计</th>
-					</tr>
-						<s:iterator var="orderItem" value="#order.prderItems">
+					
+						<s:iterator var="orderItem" value="#order.orderItems">
 						<tr>
 							<td width="60">
-								<img src="${pageContext.request.contextPath}/<s:property value="#orderItem.product.image"/>"/>
+								<img src="${pageContext.request.contextPath}/<s:property value="#orderItem.product.image"/>" />
 							</td>
 							<td>
 								<s:property value="#orderItem.product.pname" />
@@ -75,6 +77,7 @@
 							</td>			
 						</tr>
 						</s:iterator>
+							<tr><td colspan="5"></td></tr>
 						</s:iterator>
 						<td colspan="5">
 						<div class="pagination">
@@ -85,7 +88,7 @@
 									<a class="firstPage"
 										href="${pageContext.request.contextPath}/order_findByUid.action?page=1">&nbsp;</a>
 									<a class="previousPage"
-										href="${pageContext.request.contextPath}/product_findByUid.action?page=<s:property value="pageBean.page-1"/>">&nbsp;</a>
+										href="${pageContext.request.contextPath}/order_findByUid.action?page=<s:property value="pageBean.page-1"/>">&nbsp;</a>
 								</s:if>
 
 
@@ -93,7 +96,7 @@
 									end="pageBean.totalPage">
 									<s:if test="pageBean.page!=#i">
 										<a
-											href="${pageContext.request.contextPath}/product_findByUid.action?&page=<s:property value="#i"/>"><s:property
+											href="${pageContext.request.contextPath}/order_findByUid.action?&page=<s:property value="#i"/>"><s:property
 												value="#i" /></a>
 									</s:if>
 									<s:else>
@@ -103,9 +106,9 @@
 
 								<s:if test="pageBean.page!=pageBean.totalPage">
 									<a class="nextPage"
-										href="${pageContext.request.contextPath}/product_findByUid.action?page=<s:property value="pageBean.page+1"/>">&nbsp;</a>
+										href="${pageContext.request.contextPath}/order_findByUid.action?page=<s:property value="pageBean.page+1"/>">&nbsp;</a>
 									<a class="lastPage"
-										href="${pageContext.request.contextPath}/product_findByUid.action?page=<s:property value="pageBean.totalPage"/>">&nbsp;</a>
+										href="${pageContext.request.contextPath}/order_findByUid.action?page=<s:property value="pageBean.totalPage"/>">&nbsp;</a>
 								</s:if>
 						</div>
 						

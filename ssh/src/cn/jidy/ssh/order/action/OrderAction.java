@@ -1,6 +1,8 @@
 package cn.jidy.ssh.order.action;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.struts2.ServletActionContext;
@@ -43,17 +45,10 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 		this.r6_Order = r6_Order;
 	}
 
-	public String getPd_FrpId() {
-		return pd_FrpId;
-	}
-
 	public void setPd_FrpId(String pd_FrpId) {
 		this.pd_FrpId = pd_FrpId;
 	}
 
-	public Integer getPage() {
-		return page;
-	}
 
 	public void setPage(Integer page) {
 		this.page = page;
@@ -63,17 +58,10 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 		return order;
 	}
 
-	public Order getOrder() {
-		return order;
-	}
-
 	public void setOrder(Order order) {
 		this.order = order;
 	}
 
-	public OrderService getOrderService() {
-		return orderService;
-	}
 
 	public void setOrderService(OrderService orderService) {
 		this.orderService = orderService;
@@ -83,10 +71,15 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 	 * 生成订单的方法,将订单信息保存的数据库
 	 * 
 	 * @author Rabit
+	 * @throws ParseException 
 	 * 
 	 */
-	public String save() {
-		order.setOrdertime(new Date());
+	public String save() throws ParseException {
+		Date date=new Date();                             
+        SimpleDateFormat temp=new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");  
+        String date2=temp.format(date);  
+        Date date3=temp.parse(date2);  
+		order.setOrdertime(date3);
 		order.setState(1);// 1：未付款 2：已经付款，但是没有发货 3：已经发货，但是没有确认收货 4：交易完成
 		// 来至购物车的总价
 		Cart cart = (Cart) ServletActionContext.getRequest().getSession()
@@ -112,6 +105,7 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 		}
 		order.setUser(existUser);
 		orderService.save(order);
+		cart.clearCart();
 		return "saveSuccess";
 	}
 
@@ -126,7 +120,7 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 				.getAttribute("existUser");
 		Integer uid = existUser.getUid();
 		PageBean<Order> pageBean = orderService.findByUid(uid, page);
-		System.out.println((pageBean == null) + "----------------------");
+		System.out.println("pageBean.getList().size()"+"=================================="+(pageBean.getList().size()));
 		ActionContext.getContext().getValueStack().set("pageBean", pageBean);
 		return "findByUidsuccess";
 	}

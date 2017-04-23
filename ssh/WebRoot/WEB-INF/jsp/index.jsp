@@ -119,7 +119,7 @@
 						 <ul class="tabContent" style="display: block;">
 									<s:iterator var="n" value="nList">
 									<li>
-										<a  target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#n.image" />" style="display: block;"></a>									</li>
+										<a href="${pageContext.request.contextPath}/product_findByPid.action?pid=<s:property value="#h.pid" />" target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#n.image" />" style="display: block;"></a>									</li>
 									</s:iterator>
 						</ul>
 			</div>
