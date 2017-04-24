@@ -1,5 +1,6 @@
 package cn.lyj.ssh.index.action;
 
+import java.util.Date;
 import java.util.List;
 
 import cn.lj.ssh.product.service.ProductService;
@@ -11,14 +12,14 @@ import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 
 /**
- * Ê×Ò³·ÃÎÊµÄaction
+ * ï¿½ï¿½Ò³ï¿½ï¿½ï¿½Êµï¿½action
  * 
- * @author ¸ÇÊÀÌ«±£
+ * @author ï¿½ï¿½ï¿½ï¿½Ì«ï¿½ï¿½
  *
  */
 
 public class IndexAction extends ActionSupport {
-	private ProductService productService;//×¢ÈëÉÌÆ·µÄÒµÎñ²ã
+	private ProductService productService;//×¢ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½Òµï¿½ï¿½ï¿½
 	private CategoryService categoryService;
 	
 	
@@ -36,9 +37,10 @@ public class IndexAction extends ActionSupport {
 		this.categoryService = categoryService;
 	}
 	/**
-	 * Ö´ÐÐÊ×Ò³µÄµÄ·½·¨
+	 * Ö´ï¿½ï¿½ï¿½ï¿½Ò³ï¿½ÄµÄ·ï¿½ï¿½ï¿½
 	 */
 	public String  execute() {
+		System.out.println((new Date())+"=====================================");
 		List<Category> cList=categoryService.findAll();
 		ActionContext.getContext().getSession().put("cList", cList);
 		List<Product> hList=productService.findHot();
