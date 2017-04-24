@@ -7,7 +7,6 @@ public class AdminUser {
 	private String username;
 	private String password;
 	
-	
 	public Integer getUid() {
 		return uid;
 	}
