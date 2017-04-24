@@ -64,7 +64,9 @@
 								</tr>
 								<tr>
 									<th>&nbsp;</th>
-									<td><input type="submit" class="submit" value="登 录">
+									<td><input type="submit" class="submit" value="登 录">&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" class="submit" value="管理员登 录">
+									</td>
+									<td>
 									</td>
 								</tr>
 								<tr class="register">
