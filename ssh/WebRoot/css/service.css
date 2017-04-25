@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+.top{
+	width:950px;
+	height:700px;	
+}
+.top1{
+	width:950px;
+	height:90px;
+	margin:20;	
+}
+
+.mid{
+
+	width:800px;
+	height:350px;	
+}
+.mid1{
+	
+	width:400px;
+	height:500px;
+	float:left;
+	margin:0;
+}
