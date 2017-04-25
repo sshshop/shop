@@ -17,13 +17,12 @@
 					xhr.onreadystatechange = function(){
 						if(xhr.readyState == 4){
 							if(xhr.status == 200){
-								
 								div1.innerHTML = xhr.responseText;
 							}
 						}
 					}
 					// 3.打开连接
-					xhr.open("GET","${pageContext.request.contextPath}/adminOrder_findOrderItem.action?oid="+oid+"&time="+new Date().getTime(),true);
+					xhr.open("GET","${pageContext.request.contextPath}/adminOrder_findOrderItem.action?time="+new Date().getTime()+"&oid="+oid,true);
 					// 4.发送
 					xhr.send(null);
 					but.value = "关闭";
@@ -34,7 +33,7 @@
 				
 			}
 			function createXmlHttp(){
-				   var xmlHttp;
+				   var xmlHttp="";
 				   try{ // Firefox, Opera 8.0+, Safari
 				        xmlHttp=new XMLHttpRequest();
 				    }
@@ -46,7 +45,9 @@
 					      try{
 					         xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
 					      }
-					      catch (e){}
+					      catch (e){
+					    	  
+					      }
 					      }
 				    }
 
@@ -56,7 +57,7 @@
 	</HEAD>
 	<body>
 		<br>
-		<form id="Form1" name="Form1" action="${pageContext.request.contextPath}/user/list.jsp" method="post">
+		<form id="Form1" name="Form1" method="post">
 			<table cellSpacing="1" cellPadding="0" width="100%" align="center" bgColor="#f5fafe" border="0">
 				<TBODY>
 					<tr>
@@ -73,22 +74,22 @@
 								<tr
 									style="FONT-WEIGHT: bold; FONT-SIZE: 12pt; HEIGHT: 25px; BACKGROUND-COLOR: #afd1f3">
 
-									<td align="center" width="14%">
+									<td align="center" width="10%">
 										序号
 									</td>
-									<td align="center" width="14%">
+									<td align="center" width="10%">
 										订单编号
 									</td>
-									<td align="center" width="14%">
+									<td align="center" width="10%">
 										订单金额
 									</td>
-									<td align="center" width="14%">
+									<td align="center" width="10%">
 										收货人
 									</td>
-									<td align="center" width="14%">
+									<td align="center" width="10%">
 										订单状态
 									</td>
-									<td align="center" width="30%">
+									<td align="center" width="50%">
 										订单详情
 									</td>
 								</tr>
@@ -117,7 +118,7 @@
 													未付款
 												</s:if>
 												<s:if test="#o.state==2">
-													<a href="${ pageContext.request.contextPath }/adminOrder_updateState.action?oid=<s:property value="#o.oid"/>"><font color="blue">发货</font></a>
+													<a href="${ pageContext.request.contextPath }/adminOrder_updateState.action?oid=<s:property value="#order1.oid"/>"><font color="blue">发货</font></a>
 												</s:if>
 												<s:if test="#o.state==3">
 													等待确认收货
@@ -129,6 +130,7 @@
 											</td>
 											<td align="center" style="HEIGHT: 22px">
 												<input type="button" value="订单详情" id="but<s:property value="#o.oid"/>" onclick="showDetail(<s:property value="#o.oid"/>)"/>
+											
 												<div id="div<s:property value="#o.oid"/>">
 													
 												</div>

@@ -69,7 +69,6 @@ public class OrderDao extends HibernateDaoSupport{
 	public List<Order> findByPageUid(Integer uid, Integer begin, Integer limit) {
 		String hql = "from Order o where o.user.uid = ? order by o.ordertime desc";
 		List<Order> list=this.getHibernateTemplate().execute(new PageHibernateCallback<Order>(hql, new Object[]{uid}, begin, limit));
-		System.out.println(list.size()+"-----------------------------------------------");
 		if (list!=null&&list.size()>0) {
 			return list;
 		}
@@ -77,7 +76,7 @@ public class OrderDao extends HibernateDaoSupport{
 	}
 	//根据oid查询订单项
 	public List<OrderItem> findOrderItem(Integer oid) {
-		String hql="from OrderItem oi where oi.order.oid=?";
+		String hql="from OrderItem oi where oi.order.oid= ?";
 		List<OrderItem> list=this.getHibernateTemplate().find(hql,oid);
 		if (list!=null&&list.size()>0) {
 			return list;
