@@ -6,7 +6,7 @@ import java.util.Set;
 import cn.lj.ssh.product.vo.Product;
 import cn.zy.ssh.category.vo.Category;
 
-public class CategorySecond {
+public class CategorySecond implements java.io.Serializable{
 	private Integer csid;
 	private String csname;
 	private Category category;

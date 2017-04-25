@@ -118,7 +118,7 @@
 					<dt>购买数量:</dt>
 					<dd>
 						<input id="count" name="count" value="1" maxlength="4"
-							onpaste="return false;" type="number" />
+							onpaste="return false;" type="number" min="1" />
 					        
 					</dd>
 					<dd>件</dd>

@@ -70,4 +70,15 @@ public class UserService {
 	public UserDao getUserDao() {
 		return userDao;
 	}
+	
+	/**
+	 * 
+	 * Service层根据邮箱查询用户
+	 * @author Scream
+	 * 
+	 * */
+
+	public User findByEmail(String email) {
+		return userDao.findByEmail(email);
+	}
 }

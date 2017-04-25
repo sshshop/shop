@@ -68,13 +68,22 @@
 		function checkUsername(){
 		// 获得文件框值:
 		var username = document.getElementById("username").value;
+		var submit = document.getElementById("submit")
 		// 1.创建异步交互对象
 		var xhr = createXmlHttp();
 		// 2.设置监听
 		xhr.onreadystatechange = function() {
 			if(xhr.readyState == 4){
 				if(xhr.status == 200){
+					if(username.length<5){
+						
+						document.getElementById("submit").style.display = "none";
+						alert("用户名不能小于5位");
+					}else{
+						submit.style.display = "block";
+					}
 					document.getElementById("span1").innerHTML = xhr.responseText;
+					
 				}
 			}
 		}
@@ -82,7 +91,26 @@
 		xhr.open("GET","${pageContext.request.contextPath}/user_findByName.action?time="+new Date().getTime()+"&username="+username,true);
 		// 4.发送
 		xhr.send(null);
-	}	
+	}
+		
+		function checkEmail(){
+			//获取文件框的值
+			var email = document.getElementById("email").value;
+			//1.创建异步交互对象
+			var xhr = createXmlHttp();
+			//设置监听
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState == 4 ){
+					if(xhr.status == 200 ){
+						document.getElementById("span2").innerHTML = xhr.responseText;
+					}
+				}
+			}
+			//打开连接
+			xhr.open("GET","${pageContext.request.contextPath}/user_findByEmail.action?time="+new Date().getTime()+"&email="+email,true);
+			//发送
+			xhr.send(null);
+		}
 		
 		
 		function createXmlHttp(){

@@ -29,7 +29,6 @@ public class UserDao extends HibernateDaoSupport {
 		String hqlString = "from User where username = ? and password = ? and state = 1";
 		List<User> list = this.getHibernateTemplate().find(hqlString,
 				user.getUsername(), user.getPassword());
-		System.out.println(list.size());
 		if (list!=null && list.size()>0) {
 			return list.get(0);
 		}
@@ -65,5 +64,19 @@ public class UserDao extends HibernateDaoSupport {
 		 */
 		public void save(User user) {
 			this.getHibernateTemplate().save(user);		
+		}
+		/**
+		 * 
+		 * 根据邮箱查询用户	
+		 * @author Scream
+		 * 
+		 * */
+		public User findByEmail(String email) {
+			String hql="from User where email = ?";
+			List<User> list = this.getHibernateTemplate().find(hql, email);
+			if( list != null && list.size() > 0 ){
+				return list.get(0);
+			}
+			return null;
 		}
 }

@@ -111,7 +111,7 @@
 									
 								</th>
 								<td>
-									<input type="submit" class="submit" value="同意以下协议并注册" />
+									<input type="submit" id="submit" class="submit" value="同意以下协议并注册" />
 								</td>
 							</tr>
 							<tr>

@@ -10,6 +10,7 @@ import cn.lj.ssh.user.service.UserService;
 import cn.lj.ssh.user.vo.User;
 import cn.lj.ssh.utils.SendMailUnitl;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -97,12 +98,12 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 		 * 异常解决：注意userservice是自动装包的，如果在新实例化一个的话，那userservice就是另一个userservice了，
 		 * 所以会出现空指针异常
 		 */
-		/* User exitUser=new UserService.login(user); */
+		/* User exitUser=new UserService.login(user); 
 		//验证码验证
-		/*String chcek1 = (String) ServletActionContext.getRequest().getAttribute(
+		String chcek1 = (String) ServletActionContext.getRequest().getAttribute(
 				"checkcode1");
-		System.out.println((chcek1)+"11111"+(checkcode));*/
-		/*	if (!chcek1.equalsIgnoreCase(checkcode)) {
+		System.out.println((chcek1)+"11111"+(checkcode));
+			if (!chcek1.equalsIgnoreCase(checkcode)) {
 				this.addActionError("验证输入错误");
 				return "checkcodelogin";
 			}*/
@@ -123,8 +124,8 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	}
 
 	/**
-	 * 用户注册
 	 * 
+	 * 用户注册
 	 * @author Scream
 	 * 
 	 **/
@@ -157,25 +158,49 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	}
 
 	/**
-	 * AjAX进行异步校验
+	 * AjAX进行用户名异步校验
 	 * 
 	 * @author 盖世太保
 	 * @throws IOException
 	 * 
 	 */
 	public String findByName() throws IOException {
+		HttpServletResponse response = ServletActionContext.getResponse();
+		response.setContentType("text/html;charset=UTF-8");
 		// 调用Service进行查询:
 		User existUser = userService.findByUsername(user.getUsername());
 		// 获得response对象,项页面输出:
-		HttpServletResponse response = ServletActionContext.getResponse();
-		response.setContentType("text/html;charset=UTF-8");
 		// 判断
-		if (existUser != null) {
+		if ((user.getUsername().indexOf(" ")>0)|user.getUsername().equals("")|existUser != null) {
 			// 查询到该用户:用户名已经存在
-			response.getWriter().println("<font color='red'>用户名已经存在</font>");
+			response.getWriter().println("<font color='red'>用户名存在空格或者已经存在</font>");
 		} else {
 			// 没查询到该用户:用户名可以使用
 			response.getWriter().println("<font color='green'>用户名可以使用</font>");
+		}
+		return NONE;
+	}
+	
+	/**
+	 * 
+	 * AJAX进行邮箱异步校验
+	 * @author Scream
+	 * 
+	 * */
+	
+	public String findByEmail() throws IOException {
+		//调用Service层进行查询
+		User existUser = userService.findByEmail(user.getEmail());
+		//获取response对象，向页面输出
+		HttpServletResponse response = ServletActionContext.getResponse();
+		response.setContentType("text/html;charset=UTF-8");
+		//进行判断
+		if( existUser != null){
+			//如果不等于空则已经存在该邮箱
+			response.getWriter().println("<font color='red'>该邮箱已存在</font>");
+		}else{
+			//否则并不存在该邮箱
+			response.getWriter().println("<font color='green'>该邮箱可以使用</font>");
 		}
 		return NONE;
 	}

@@ -11,7 +11,7 @@ import cn.zy.ssh.categorysecond.vo.CategorySecond;
  * @author Rabit
  * 
  */
-public class Category {
+public class Category implements java.io.Serializable{
 	private Integer cid;
 	private String cname;
 	private Set<CategorySecond> categorySeconds = new HashSet<CategorySecond>();
