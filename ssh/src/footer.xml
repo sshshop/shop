@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+	<struts>
+	<package name="footer" extends="struts-default" namespace="/">
+		<action name="footer_*" class="cn.zy.ssh.footer.footer" method="{1}">
+			<result name="legalNotices">/WEB-INF/jsp/LegalNotices.jsp</result>
+			<result name="aboutus">/WEB-INF/jsp/aboutus.jsp</result>
+			<result name="adverStatement">/WEB-INF/jsp/AdverStatement.jsp</result>
+			<result name="contactus">/WEB-INF/jsp/contactus.jsp</result>
+			<result name="help">/WEB-INF/jsp/help.jsp</result>
+			<result name="otherlink">/WEB-INF/jsp/otherlink.jsp</result>
+			<result name="payanddistribution">/WEB-INF/jsp/Payanddistribution.jsp</result>
+			<result name="service">/WEB-INF/jsp/service.jsp</result>
+			<result name="shoppingguide">/WEB-INF/jsp/shoppingguide.jsp</result>
+			<result name="newguide">/WEB-INF/jsp/newguide.jsp</result>
+		</action>
+	</package>
+	</struts>

@@ -28,4 +28,6 @@
 	<!--  后台商品管理的配置 <陆育静> -->
 	<include file="adminproduct.xml"></include>
 	<include file="useradmin.xml"></include>
+	<!-- 网页跳转的配置文件<张悦> -->
+	<include file="footer.xml"></include>
 </struts>
