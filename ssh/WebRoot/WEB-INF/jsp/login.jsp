@@ -55,8 +55,7 @@ function findPassword(){
 									<td><label> <input type="checkbox"
 											id="isRememberUsername" name="isRememberUsername"
 											value="true">记住用户名
-									</label> <label> &nbsp;&nbsp;<button style="border:0px; background-color:#FFF;" onclick="findPassword();">找回密码</button>
-									</label></td>
+									</label> </td>
 								</tr>
 								<tr>
 									<th>&nbsp;</th>
@@ -73,8 +72,10 @@ function findPassword(){
 											<dt>还没有注册账号？</dt>
 											<dd>
 												立即注册即可体验在线购物！ <a href="${pageContext.request.contextPath}/user_registPage.action">立即注册</a>
+												
 											</dd>
 										</dl>
+										<a style="float: right; height: 40px" href="${pageContext.request.contextPath}/adminUser_quit.action" ><dt>管理员入口&nbsp;</dt></a>
 									</td>
 								</tr>
 							</tbody>

@@ -44,6 +44,15 @@ public class AdminUserAction extends ActionSupport implements ModelDriven<AdminU
 		
 		
 	}
+	/**
+	 * 管理员退出
+	 * @author 盖世太保
+	 */
 	
-
+	public String quit(){
+		
+		ServletActionContext.getRequest().getSession().invalidate();
+		return "quit";
+	}
+	
 }

@@ -8,35 +8,40 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="${pageContext.request.contextPath }/css/general.css" rel="stylesheet" type="text/css" />
 <link href="${pageContext.request.contextPath }/css/main.css" rel="stylesheet" type="text/css" />
-
+<link href="${pageContext.request.contextPath}/css/login.css" rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css" />
 <style type="text/css">
-body {
-  color: white;
-}
+
 </style>
 </head>
-<body style="background: #278296">
-<center><s:actionerror /></center>
+<body background="${pageContext.request.contextPath}/images/3.jpg" style=" background-size:100% 100%; background-attachment:fixed;">
+    
+
 <form method="post" action="${pageContext.request.contextPath }/adminUser_login.action" target="_parent" name='theForm' onsubmit="return validate()">
-  <table cellspacing="0" cellpadding="0" style="margin-top: 100px" align="center">
+  <table cellspacing="0" cellpadding="0" style="margin-top: 300px" align="center">
   <tr>
-    <td style="padding-left: 50px">
+    <td style="padding-left:700px">
       <table>
-      <tr>
-        <td>管理员姓名：</td>
-        <td><input type="text" name="username" /></td>
-      </tr>
-      <tr>
-        <td>管理员密码：</td>
-        <td><input type="password" name="password" /></td>
-      </tr>
-      <tr><td>&nbsp;</td><td><input type="submit" value="进入管理中心" class="button" /></td></tr>
+								<tr>
+									<th style="color : white;">用户名:</th>
+									<td><input type="text" id="username" name="username"
+										class="text" maxlength="20"></td>
+								</tr>
+								<tr style="height: 20px"></tr>
+								<tr>
+									<th style="color : white;">密&nbsp;&nbsp;码:</th>
+									<td><input type="password" id="password" name="password"
+										class="text" maxlength="20" autocomplete="off"></td>
+								</tr>
+								<tr style="height: 20px"></tr>
+      <tr style="width: 100px"><td style="width: 100px" > &nbsp;</td><td ><input type="submit" value="管理员登录" class="button" /></td></tr>
       </table>
     </td>
   </tr>
   </table>
   <input type="hidden" name="act" value="signin" />
 </form>
+
 <script language="JavaScript">
 <!--
   document.forms['theForm'].elements['username'].focus();

@@ -24,17 +24,16 @@ TH {
 	FONT-SIZE: 12px;
 	COLOR: #000000
 }
+a.tt:hover {color: #FF0000;}
 </style>
 		<link href="${pageContext.request.contextPath}/css/Style1.css" rel="stylesheet" type="text/css">
 	</HEAD>
 	<body>
 		<table width="100%" height="70%"  border="0" cellspacing="0" cellpadding="0">
 			<tr>
-				<td>
-					<img width="100%" src="${pageContext.request.contextPath}/images/top_01.jpg">
-				</td>
+				
 
-				<td width="100%" background="${pageContext.request.contextPath}/images/top_100.jpg">
+				<td width="100%" background="${pageContext.request.contextPath}/images/top_100.jpg" style=" background-size:100% 80%; background-attachment:fixed;">
 				</td>
 			</tr>
 		</table>
@@ -77,8 +76,8 @@ else
 // -->
 									</script> </font>
 							</td>
-							<td width="15%">
-								<table width="100%" border="0" cellspacing="0" cellpadding="0">
+							<td width="8%">
+								<table width="80%" border="0" cellspacing="0" cellpadding="0">
 									<tr>
 										<td width="16"
 											background="${pageContext.request.contextPath}/images/mis_05b.jpg">
@@ -91,16 +90,14 @@ else
 											用户名：
 											<font color="blue"><s:property value="#session.existAdminUser.username"/></font>
 										</td>
-										<td width="10" align="right"
-											background="${pageContext.request.contextPath}/images/mis_05b.jpg">
-											<img src="${pageContext.request.contextPath}/images/mis_05c.jpg" width="6" height="18">
-										</td>
+										
 									</tr>
 								</table>
 							</td>
-							<td align="right" width="5%">
+							<td   width="5%" style="margin-left: 50px" >
+							<a href="${pageContext.request.contextPath}/adminUser_quit.action"  target="_parent " class="tt">退&nbsp;出</a> 
 							</td>
-						</tr>
+							 </tr>
 					</table>
 				</td>
 			</tr>
