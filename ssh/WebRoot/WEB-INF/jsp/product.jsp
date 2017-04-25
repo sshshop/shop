@@ -118,11 +118,8 @@
 					<dt>购买数量:</dt>
 					<dd>
 						<input id="count" name="count" value="1" maxlength="4"
-							onpaste="return false;" type="text" />
-							<div>
-								<span id="increase" class="increase">&nbsp;</span> <span
-									id="decrease" class="decrease">&nbsp;</span>
-							</div>
+							onpaste="return false;" type="number" />
+					        
 					</dd>
 					<dd>件</dd>
 				</dl>
