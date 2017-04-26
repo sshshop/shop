@@ -58,7 +58,7 @@ public class SendMailUnitl {
 			// 设置标题
 			message.setSubject("来至xx商城的官方激活邮件");
 			// 设置邮件的内容
-			message.setContent("<h1>xx商城官方激活邮件!点下面链接完成激活操作!</h1><h3><a href='http://120.25.245.88:8080/ssh/user_active.action?code="+code+"'>http://localhost:8080/ssh/user_active.action?code="+code+"</a></h3>",
+			message.setContent("<h1>贵大商城官方激活邮件!点下面贵大商城链接完成激活操作!</h1><h3><a href='http://120.25.245.88:8080/ssh/user_active.action?code="+code+"'>贵大商城</a></h3>",
 					"text/html;charset=UTF-8");
 			// 发送邮件
 			Transport.send(message);
