@@ -28,7 +28,7 @@ public class ProductDao extends HibernateDaoSupport {
 		criteria.add(Restrictions.eq("is_hot", 1));
 		criteria.addOrder(Order.desc("pdate"));
 		List<Product> list = this.getHibernateTemplate().findByCriteria(
-				criteria, 0, 10);
+				criteria, 0, 15);
 		return list;
 	}
 
@@ -42,7 +42,7 @@ public class ProductDao extends HibernateDaoSupport {
 		DetachedCriteria criteria = DetachedCriteria.forClass(Product.class);
 		criteria.addOrder(Order.desc("pdate"));
 		List<Product> list = this.getHibernateTemplate().findByCriteria(
-				criteria, 0, 10);
+				criteria, 0, 15);
 		return list;
 	}
 	/**
@@ -109,12 +109,9 @@ public class ProductDao extends HibernateDaoSupport {
 	public int findCountCsid(Integer csid) {
 		String hql = "select count(*) from Product p where p.categorySecond.csid = ?";
 		List<Long> list = this.getHibernateTemplate().find(hql, csid);
-		System.out.println("22222222222222222222222222222222222222222222222222222222222222222222222222");
 		if (list != null && list.size() > 0) {
-			System.out.println("-------------------"+list.get(0).intValue()+"------------------------");
 			return list.get(0).intValue();
 		}
-		System.out.println("000000000000000000000000000000000000000000000000000000000000000");
 		return 0;
 	}
 

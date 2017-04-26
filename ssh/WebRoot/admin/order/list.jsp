@@ -118,7 +118,7 @@
 													未付款
 												</s:if>
 												<s:if test="#o.state==2">
-													<a href="${ pageContext.request.contextPath }/adminOrder_updateState.action?oid=<s:property value="#order1.oid"/>"><font color="blue">发货</font></a>
+													<a href="${ pageContext.request.contextPath }/adminOrder_updateState.action?oid=<s:property value="#o.oid"/>"><font color="blue">发货</font></a>
 												</s:if>
 												<s:if test="#o.state==3">
 													等待确认收货

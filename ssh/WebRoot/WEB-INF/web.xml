@@ -20,6 +20,8 @@ org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter
   <filter-mapping>
   		<filter-name>struts2</filter-name>
  		<url-pattern>/*</url-pattern>
+ 		<dispatcher>REQUEST</dispatcher>
+ 		<dispatcher>FORWARD</dispatcher>
   		
   </filter-mapping>
   

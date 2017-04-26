@@ -21,17 +21,17 @@
 			<div id="hotProduct" class="hotProduct clearfix">
 					<div class="title">
 						<strong>热门商品</strong>
-						<!-- <a  target="_blank"></a> -->
+						<!-- <a  ></a> -->
 					</div>
 					<ul class="tab">
 							<li class="current">
-								<a href="./蔬菜分类.htm?tagIds=1" target="_blank"></a>
+								<a href="./蔬菜分类.htm?tagIds=1" ></a>
 							</li>
 							<li>
-								<a  target="_blank"></a>
+								<a  ></a>
 							</li>
 							<li>
-								<a target="_blank"></a>
+								<a ></a>
 							</li>
 					</ul>
 <!-- 					<div class="hotProductAd">
@@ -40,86 +40,35 @@
 						<ul class="tabContent" style="display: block;">
 									<s:iterator var="h" value="hList">
 									<li>
-										<a href="${pageContext.request.contextPath}/product_findByPid.action?pid=<s:property value="#h.pid" />" target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#h.image" />" style="display: block;"></a>
+										<a href="${pageContext.request.contextPath}/product_findByPid.action?pid=<s:property value="#h.pid" />" ><img src="${pageContext.request.contextPath}/<s:property value="#h.image" />" style="display: block;" title="<s:property value="#h.pname" /> "/></a>
 									</li>
 								</s:iterator>	
 						</ul>
-						<ul class="tabContent" style="display: none;">
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/c5b1b396-181a-4805-9e68-9b400d71f91e-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/c5b1b396-181a-4805-9e68-9b400d71f91e-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/4107e1ce-5e7c-4941-bc0f-718f35ba14cd-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/4107e1ce-5e7c-4941-bc0f-718f35ba14cd-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/6f8ae4bf-cbd3-41c7-aa22-0fe81db6add4-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/6f8ae4bf-cbd3-41c7-aa22-0fe81db6add4-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/3d835c07-08c5-46d7-912d-adcd41f8c8e6-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/3d835c07-08c5-46d7-912d-adcd41f8c8e6-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/5e5be432-fbee-4bdd-a7bd-a92e01f9bfc4-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/5e5be432-fbee-4bdd-a7bd-a92e01f9bfc4-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/cae1bc6b-0159-4ce0-9a9c-4926df231b4f-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/cae1bc6b-0159-4ce0-9a9c-4926df231b4f-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/40e34b2d-d240-446e-9874-89969edbe89f-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/40e34b2d-d240-446e-9874-89969edbe89f-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/a8db4410-05e5-4dfa-8217-eb885a104af3-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/a8db4410-05e5-4dfa-8217-eb885a104af3-thumbnail.jpg" style="display: block;"></a>
-									</li>
-						</ul>
-						<ul class="tabContent" style="display: none;">
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/9f164e13-bcaa-48a6-9b35-0ca96629f614-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/9f164e13-bcaa-48a6-9b35-0ca96629f614-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/c41d0347-364c-42bb-baeb-25142c1ed167-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/c41d0347-364c-42bb-baeb-25142c1ed167-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/2af8be8a-75b9-41ae-b009-a7c54b685a4e-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/2af8be8a-75b9-41ae-b009-a7c54b685a4e-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/1a3ad7de-7ee9-4530-b89a-46375219beb5-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/1a3ad7de-7ee9-4530-b89a-46375219beb5-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/ea566af4-0cdb-4017-a8c7-27e407794204-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/ea566af4-0cdb-4017-a8c7-27e407794204-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/dea31d42-fa3e-4b69-a631-51ca7c79f032-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/dea31d42-fa3e-4b69-a631-51ca7c79f032-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/1c81f492-a3d7-4c06-8658-bc2c76808cd3-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/1c81f492-a3d7-4c06-8658-bc2c76808cd3-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/f1174ca6-6bdf-4d0b-86e6-5455bc8e89ad-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/f1174ca6-6bdf-4d0b-86e6-5455bc8e89ad-thumbnail.jpg" style="display: block;"></a>
-									</li>
-						</ul>
+						
 			</div>
 		</div>
 		<div class="span24">
 			<div id="newProduct" class="newProduct clearfix">
 					<div class="title">
 						<strong>最新商品</strong>
-						<a  target="_blank"></a>
+						<a  ></a>
 					</div>
 					<ul class="tab">
 							<li class="current">
-								<a href="./蔬菜分类.htm?tagIds=2" target="_blank"></a>
+								<a href="#" ></a>
 							</li>
 							<li>
-								<a  target="_blank"></a>
+								<a  ></a>
 							</li>
 							<li>
-								<a target="_blank"></a>
+								<a ></a>
 							</li>
 					</ul>
 					
 						 <ul class="tabContent" style="display: block;">
 									<s:iterator var="n" value="nList">
 									<li>
-										<a href="${pageContext.request.contextPath}/product_findByPid.action?pid=<s:property value="#h.pid" />" target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#n.image" />" style="display: block;"></a>									</li>
+										<a href="${pageContext.request.contextPath}/product_findByPid.action?pid=<s:property value="#h.pid" />" ><img src="${pageContext.request.contextPath}/<s:property value="#n.image" />" style="display: block;" title="<s:property value="#n.pname" /> "/></a>									</li>
 									</s:iterator>
 						</ul>
 			</div>
@@ -127,43 +76,32 @@
 		<div class="span24">
 			<div class="friendLink">
 				<dl>
-					<dd><a  href="./newguide.html" target="_blank">新手指南</a></dd>
+					<dd><a  href="${pageContext.request.contextPath}/footer_newguide.action" >新手指南</a></dd>
 							<dd>
-								<a  href="Payanddistribution.html#center_top" target="_blank">支付方式</a>
+								<a  href="${pageContext.request.contextPath}/footer_payanddistribution.action" >支付方式</a>
 								|
 							</dd>
 							<dd>
-								<a href="Payanddistribution.html#center_transport" target="_blank">配送方式</a>
+								<a href="${pageContext.request.contextPath}/footer_payanddistribution.action" >配送方式</a>
 								|
 							</dd>
 							<dd>
-								<a  target="_blank">售后服务</a>
+								<a  >售后服务</a>
 								|
 							</dd>
 							<dd>
-								<a href="help.html#center_top" target="_blank">购物帮助</a>
+								<a href="${pageContext.request.contextPath}/footer_help.action" >购物帮助</a>
 								|
 							</dd>
+			
+							
 							<dd>
-								<a href="help.html#ios" target="_blank">蔬菜卡</a>
-								|
-							</dd>
-							<dd>
-								<a  target="_blank">礼品卡</a>
-								|
-							</dd>
-							<dd>
-								<a target="_blank">银联卡</a>
-								|
-							</dd>
-							<dd>
-								<a  target="_blank">亿家卡</a>
+								<a >银联卡</a>
 								|
 							</dd>
 							
-					<dd class="more">
-						<a >更多</a>
-					</dd>
+							
+					
 				</dl>
 			</div>
 		</div>
