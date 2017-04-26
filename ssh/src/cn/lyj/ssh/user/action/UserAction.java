@@ -133,9 +133,8 @@ public class UserAction extends ActionSupport implements ModelDriven<User> {
 	public String register() {
 		// 判断验证码程序
 		// 从session中获取
-		String chcek = (String) ServletActionContext.getRequest().getAttribute(
+		String chcek = (String) ServletActionContext.getRequest().getSession().getAttribute(
 				"checkcode");
-		System.out.println(chcek);
 			if (!checkcode.equalsIgnoreCase(chcek)) {
 				this.addActionError("验证输入错误");
 				return "checkcodeFail";

@@ -28,7 +28,7 @@
 					<div class="title">
 						<strong>会员注册</strong>
 					</div>
-					<dir><s:actionerror /> </dir>
+					<dir></font><s:actionerror /> </dir>
 					<form id="registerForm" action="${pageContext.request.contextPath }/user_register.action"  method="post" novalidate="novalidate" onsubmit="return checkForm();">
 						<table>
 							<tbody><tr>
@@ -73,17 +73,17 @@
 											姓名:
 										</th>
 										<td>
-												<input type="text"  id="name" name="memberAttribute_1" class="text" maxlength="200" />
+												<input type="text"  id="name" name="name" class="text" maxlength="200" />
 												<span><s:fielderror fieldName="name" /></span>
 										</td>
 									</tr>
 									
 									<tr>
 										<th>
-											出生日期:
+											电话号码:
 										</th>
 										<td>
-												<input type="date" name="memberAttribute_3" class="text" onfocus="WdatePicker();" />
+												<input type="text" maxlength="11" name="phone" class="text" onfocus="WdatePicker();" />
 										</td>
 									</tr>
 									
@@ -92,7 +92,7 @@
 											地址:
 										</th>
 										<td>
-												<input type="text"  id="addr" name="memberAttribute_5" class="text" maxlength="200" />
+												<input type="text"  id="addr" name="addr" class="text" maxlength="200" />
 												<span><s:fielderror fieldName="addr" /></span>
 										</td>
 									</tr>
